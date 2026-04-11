@@ -314,16 +314,7 @@ section {
   to { transform: rotate(360deg); }
 }
 
-.photo-frame::after {
-  content: '';
-  position: absolute;
-  inset: 3px;
-  border-radius: 50%;
-  background: var(--surface);
-  z-index: 0;
-}
-
-.photo-frame span {
+.photo-frame img {
   position: relative;
   z-index: 1;
 }
