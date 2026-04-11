@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://api.github.com/repos/cli/cli/releases/latest\")",
+      "Bash(python3 -c \"import sys,json; r=json.load\\(sys.stdin\\); [print\\(a['name'], a['browser_download_url']\\) for a in r['assets'] if 'macOS' in a['name'] and 'arm64' in a['name']]\")",
+      "Bash(curl -L \"https://github.com/cli/cli/releases/download/v2.89.0/gh_2.89.0_macOS_arm64.zip\" -o /tmp/gh.zip --progress-bar)",
+      "Bash(unzip -q /tmp/gh.zip -d /tmp/gh_extracted)",
+      "Bash(/tmp/gh_extracted/gh_2.89.0_macOS_arm64/bin/gh --version)",
+      "Bash(/tmp/gh_extracted/gh_2.89.0_macOS_arm64/bin/gh auth:*)",
+      "Bash(dig drnickstraw.com +short)",
+      "Bash(dig www.drnickstraw.com +short)",
+      "Bash(curl -Lsv https://drnickstraw.com)",
+      "Bash(curl -Ls https://drnickstraw.com)",
+      "Bash(curl -o /dev/null -sw \"%{http_code}\" https://drnickstraw.com/style.css)",
+      "Bash(curl -o /dev/null -sw \"%{http_code}\" https://drnickstraw.com/main.js)",
+      "Bash(curl -Ls https://drnickstraw.com/style.css)",
+      "Bash(curl -Ls \"https://drnickstraw.com\" -H \"User-Agent: Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/124.0.0.0 Safari/537.36\" -o /dev/null -w \"Status: %{http_code}\\\\nSize: %{size_download} bytes\\\\n\")",
+      "Bash(curl -Is \"https://drnickstraw.com\")"
+    ]
+  }
+}

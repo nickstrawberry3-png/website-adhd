@@ -6,12 +6,30 @@
   <title>Dr. Nick — Doctor, ADHD, Life Coach</title>
   <meta name="description" content="Dr. Nick is a physician with ADHD who helps others unlock their potential through life coaching." />
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .lang-toggle {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      padding: 5px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+      margin-left: 16px;
+    }
+    .lang-toggle:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.7);
+    }
+  </style>
 </head>
 <body>
 
@@ -19,32 +37,33 @@
   <nav class="nav" id="navbar">
     <a href="#" class="nav-logo">Dr. Nick</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" data-i18n="nav-about">About</a></li>
+      <li><a href="#services" data-i18n="nav-services">Services</a></li>
+      <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
     </ul>
+    <button class="lang-toggle" id="langToggle">中文</button>
   </nav>
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="home">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <span class="hero-eyebrow">Physician &middot; Coach &middot; ADHD Advocate</span>
-      <h1>Doctor. <span>ADHD.</span><br>Life Coach.</h1>
-      <p class="hero-sub">
+      <span class="hero-eyebrow" data-i18n="hero-eyebrow">Physician &middot; Coach &middot; ADHD Advocate</span>
+      <h1 data-i18n-html="hero-h1">Doctor. <span>ADHD.</span><br>Life Coach.</h1>
+      <p class="hero-sub" data-i18n="hero-sub">
         I know what it's like to live with ADHD — the chaos, the brilliance, the frustration.
         I've turned it into my greatest asset. Let me help you do the same.
       </p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">Work With Me</a>
-        <a href="#about" class="btn btn-outline">Learn More</a>
+        <a href="#contact" class="btn btn-primary" data-i18n="hero-cta1">Work With Me</a>
+        <a href="#about" class="btn btn-outline" data-i18n="hero-cta2">Learn More</a>
       </div>
     </div>
     <div class="hero-scroll" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="6 9 12 15 18 9"></polyline>
       </svg>
-      Scroll
+      <span data-i18n="hero-scroll">Scroll</span>
     </div>
   </section>
 
@@ -60,19 +79,19 @@
         </div>
 
         <div class="about-text">
-          <p class="section-label">About</p>
-          <h2 class="section-title">I've been in your shoes.</h2>
+          <p class="section-label" data-i18n="about-label">About</p>
+          <h2 class="section-title" data-i18n="about-title">I've been in your shoes.</h2>
           <div class="section-divider"></div>
 
-          <p>
+          <p data-i18n="about-p1">
             I'm <strong>Dr. Nick</strong> — a practicing physician and certified life coach who was diagnosed with ADHD later in life.
             For years, I fought my brain. I tried to fit into systems that weren't designed for the way my mind works.
           </p>
-          <p>
+          <p data-i18n="about-p2">
             Then something shifted. I stopped treating ADHD as a deficit and started seeing it as a different operating system.
             One built for creativity, urgency, and out-of-the-box thinking.
           </p>
-          <p>
+          <p data-i18n="about-p3">
             Now I combine my medical background with coaching frameworks to help <strong>professionals, students, and creatives</strong>
             with ADHD build lives that work with their neurology — not against it.
           </p>
@@ -80,15 +99,15 @@
           <div class="about-stats">
             <div>
               <span class="stat-num">10+</span>
-              <span class="stat-label">Years in Medicine</span>
+              <span class="stat-label" data-i18n="stat-1">Years in Medicine</span>
             </div>
             <div>
               <span class="stat-num">200+</span>
-              <span class="stat-label">Clients Coached</span>
+              <span class="stat-label" data-i18n="stat-2">Clients Coached</span>
             </div>
             <div>
               <span class="stat-num">ADHD</span>
-              <span class="stat-label">Lived Experience</span>
+              <span class="stat-label" data-i18n="stat-3">Lived Experience</span>
             </div>
           </div>
         </div>
@@ -100,32 +119,32 @@
   <!-- ===== SERVICES ===== -->
   <section id="services">
     <div class="section-inner">
-      <p class="section-label">Services</p>
-      <h2 class="section-title">How I Can Help</h2>
+      <p class="section-label" data-i18n="services-label">Services</p>
+      <h2 class="section-title" data-i18n="services-title">How I Can Help</h2>
       <div class="section-divider"></div>
 
       <div class="services-grid">
 
         <div class="service-card">
           <div class="service-icon">🧭</div>
-          <h3>1:1 Coaching</h3>
-          <p>
+          <h3 data-i18n="s1-title">1:1 Coaching</h3>
+          <p data-i18n="s1-body">
             Personalized sessions tailored to your brain, your goals, and your life. We'll build systems that actually stick — no generic productivity hacks.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">⚡</div>
-          <h3>ADHD Strategy Sessions</h3>
-          <p>
+          <h3 data-i18n="s2-title">ADHD Strategy Sessions</h3>
+          <p data-i18n="s2-body">
             Deep-dive intensives focused on a specific challenge — time blindness, task initiation, emotional regulation, or career pivots.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🌐</div>
-          <h3>Group Programs</h3>
-          <p>
+          <h3 data-i18n="s3-title">Group Programs</h3>
+          <p data-i18n="s3-body">
             Community-based coaching for those who thrive with accountability and shared experience. ADHD is less lonely when you're not in it alone.
           </p>
         </div>
@@ -137,13 +156,13 @@
   <!-- ===== CONTACT ===== -->
   <section id="contact">
     <div class="section-inner">
-      <p class="section-label">Contact</p>
-      <h2 class="section-title">Ready to Get Unstuck?</h2>
+      <p class="section-label" data-i18n="contact-label">Contact</p>
+      <h2 class="section-title" data-i18n="contact-title">Ready to Get Unstuck?</h2>
       <div class="section-divider"></div>
-      <p class="contact-tagline">
+      <p class="contact-tagline" data-i18n="contact-tagline">
         Whether you're curious, skeptical, or just really tired of fighting your own brain — reach out. First conversation is on me.
       </p>
-      <a href="#contact" class="btn btn-primary">Book a Free Call</a>
+      <a href="#contact" class="btn btn-primary" data-i18n="contact-cta">Book a Free Call</a>
       <br />
       <a href="mailto:hello@drnick.com" class="contact-email">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -157,7 +176,7 @@
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <p>&copy; 2026 <span>Dr. Nick</span>. All rights reserved.</p>
+    <p data-i18n="footer">&copy; 2026 <span>Dr. Nick</span>. All rights reserved.</p>
   </footer>
 
   <script src="main.js"></script>
