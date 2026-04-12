@@ -29,6 +29,36 @@
       background: rgba(255,255,255,0.12);
       border-color: rgba(255,255,255,0.7);
     }
+    .hero-eyebrow {
+      font-size: 15px !important;
+    }
+    html[lang="zh-TW"] .hero-eyebrow {
+      letter-spacing: 0.04em !important;
+    }
+    html[lang="zh-TW"] .hero-content h1 {
+      font-size: clamp(2rem, 5.5vw, 3.5rem) !important;
+      line-height: 1.25 !important;
+    }
+    .about-stats > div {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .stat-category {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      font-family: 'Inter', sans-serif;
+    }
+    .stat-value {
+      font-size: 1rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.35;
+    }
   </style>
 </head>
 <body>
@@ -94,20 +124,20 @@
 
           <div class="about-stats">
             <div>
-              <span class="stat-num">Med+</span>
-              <span class="stat-label" data-i18n="stat-1">Medical Sciences · Edinburgh</span>
+              <span class="stat-category" data-i18n="stat-1-label">Degree</span>
+              <span class="stat-value" data-i18n="stat-1-value">Medical Sciences · Edinburgh</span>
             </div>
             <div>
-              <span class="stat-num">Age 26</span>
-              <span class="stat-label" data-i18n="stat-2">ADHD Diagnosis</span>
+              <span class="stat-category" data-i18n="stat-2-label">ADHD Diagnosis</span>
+              <span class="stat-value" data-i18n="stat-2-value">Age 26</span>
             </div>
             <div>
-              <span class="stat-num">5</span>
-              <span class="stat-label" data-i18n="stat-3">Languages</span>
+              <span class="stat-category" data-i18n="stat-3-label">Languages Spoken</span>
+              <span class="stat-value" data-i18n="stat-3-value">5</span>
             </div>
             <div>
-              <span class="stat-num" data-i18n="stat-4-num">Taipei</span>
-              <span class="stat-label" data-i18n="stat-4">Based In</span>
+              <span class="stat-category" data-i18n="stat-4-label">Based In</span>
+              <span class="stat-value" data-i18n="stat-4-value">Taipei</span>
             </div>
           </div>
         </div>
