@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 
@@ -33,6 +33,7 @@
       font-size: 15px !important;
     }
     html[lang="zh-TW"] .hero-eyebrow {
+      font-size: 19px !important;
       letter-spacing: 0.04em !important;
     }
     html[lang="zh-TW"] .hero-content h1 {
@@ -45,19 +46,27 @@
       gap: 6px;
     }
     .stat-category {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: #c9a84c;
       font-family: 'Inter', sans-serif;
+      line-height: 1.2;
     }
     .stat-value {
-      font-size: 1rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.88);
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.78);
       font-family: 'Inter', sans-serif;
-      line-height: 1.35;
+      line-height: 1.5;
+    }
+    html[lang="zh-TW"] .stat-category {
+      font-size: 24px !important;
+      letter-spacing: 0.02em !important;
+    }
+    html[lang="zh-TW"] .stat-value {
+      font-size: 15px !important;
     }
   </style>
 </head>
@@ -124,19 +133,19 @@
 
           <div class="about-stats">
             <div>
-              <span class="stat-category" data-i18n="stat-1-label">Degree</span>
-              <span class="stat-value" data-i18n="stat-1-value">Medical Sciences · Edinburgh</span>
+              <span class="stat-category" data-i18n="stat-1-label">Degrees</span>
+              <span class="stat-value" data-i18n-html="stat-1-value">MBChB Medicine<br>Medical Sciences · Edinburgh</span>
             </div>
             <div>
-              <span class="stat-category" data-i18n="stat-2-label">ADHD Diagnosis</span>
-              <span class="stat-value" data-i18n="stat-2-value">Age 26</span>
+              <span class="stat-category" data-i18n="stat-2-label">ADHD</span>
+              <span class="stat-value" data-i18n="stat-2-value">Diagnosed Age 26</span>
             </div>
             <div>
-              <span class="stat-category" data-i18n="stat-3-label">Languages Spoken</span>
-              <span class="stat-value" data-i18n="stat-3-value">5</span>
+              <span class="stat-category" data-i18n="stat-3-label">Languages</span>
+              <span class="stat-value" data-i18n="stat-3-value">5 Spoken</span>
             </div>
             <div>
-              <span class="stat-category" data-i18n="stat-4-label">Based In</span>
+              <span class="stat-category" data-i18n="stat-4-label">Based</span>
               <span class="stat-value" data-i18n="stat-4-value">Taipei</span>
             </div>
           </div>
