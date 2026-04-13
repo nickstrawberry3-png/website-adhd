@@ -397,8 +397,15 @@ section {
 }
 
 .service-icon {
-  font-size: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
   margin-bottom: 1.25rem;
+  color: var(--accent);
+}
+
+.service-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .service-card h3 {
