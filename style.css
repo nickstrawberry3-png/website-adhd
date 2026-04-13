@@ -431,6 +431,13 @@ section {
   margin: 0 auto 2.5rem;
 }
 
+.calendly-inline-widget {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 .contact-email {
   display: inline-flex;
   align-items: center;
