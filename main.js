@@ -73,6 +73,10 @@ const translations = {
     'contact-title': 'Ready to Get Unstuck?',
     'contact-tagline': "Whether you're curious, skeptical, or just tired of feeling like you're not living up to your potential, please reach out :) First conversation is free so no pressure.",
     'contact-cta': 'Book a Free Call',
+    'form-name': 'Name',
+    'form-email': 'Email',
+    'form-message': 'Message',
+    'form-send': 'Send',
     'footer': '© 2026 <span>Dr. Nick</span>. All rights reserved.',
   },
   zh: {
@@ -108,6 +112,10 @@ const translations = {
     'contact-title': '準備好突破了嗎',
     'contact-tagline': '不管你是好奇、半信半疑，還是只是累了、覺得自己沒有發揮出應有的潛力，都歡迎聯絡我 :) 第一次對話免費，不用有壓力。',
     'contact-cta': '預約免費通話',
+    'form-name': '姓名',
+    'form-email': '電子郵件',
+    'form-message': '訊息',
+    'form-send': '送出',
     'footer': '© 2026 <span>Dr. Nick</span>. 版權所有。',
   }
 };

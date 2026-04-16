@@ -464,6 +464,59 @@ section {
   border-color: var(--accent);
 }
 
+.contact-form {
+  max-width: 540px;
+  margin: 0 auto 1rem;
+  text-align: left;
+}
+
+.contact-form-group {
+  margin-bottom: 1.2rem;
+}
+
+.contact-form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+}
+
+.contact-form-group input,
+.contact-form-group textarea {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.contact-form-group input::placeholder,
+.contact-form-group textarea::placeholder {
+  color: var(--muted);
+}
+
+.contact-form-group input:focus,
+.contact-form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
+}
+
+.contact-form-submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.4rem;
+}
+
 /* ===== FOOTER ===== */
 footer {
   padding: 2rem;
