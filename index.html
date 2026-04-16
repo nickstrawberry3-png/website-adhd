@@ -209,12 +209,29 @@
       <!-- Calendly inline widget -->
       <div class="calendly-inline-widget" data-url="https://calendly.com/drnickstraw?hide_gdpr_banner=1&background_color=1a1a1a&text_color=e8e2d4&primary_color=c9a84c" style="min-width:320px;height:700px;"></div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      <a href="mailto:hello@drnick.com" class="contact-email" style="margin-top:2rem;">
+      <!-- Contact Form -->
+      <form class="contact-form" action="https://formspree.io/nick@drnickstraw.com" method="POST">
+        <div class="contact-form-group">
+          <label for="contact-name" data-i18n="form-name">Name</label>
+          <input type="text" id="contact-name" name="name" required placeholder="Your name">
+        </div>
+        <div class="contact-form-group">
+          <label for="contact-email-input" data-i18n="form-email">Email</label>
+          <input type="email" id="contact-email-input" name="email" required placeholder="your@email.com">
+        </div>
+        <div class="contact-form-group">
+          <label for="contact-message" data-i18n="form-message">Message</label>
+          <textarea id="contact-message" name="message" rows="5" required placeholder="What's on your mind?"></textarea>
+        </div>
+        <button type="submit" class="btn-primary contact-form-submit" data-i18n="form-send">Send</button>
+      </form>
+
+      <a href="mailto:nick@drnickstraw.com" class="contact-email" style="margin-top:2rem;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
           <polyline points="22,6 12,13 2,6"></polyline>
         </svg>
-        hello@drnick.com
+        nick@drnickstraw.com
       </a>
     </div>
   </section>
