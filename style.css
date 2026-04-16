@@ -515,6 +515,19 @@ section {
   width: 100%;
   justify-content: center;
   margin-top: 0.4rem;
+  display: block;
+  padding: 1.7rem 4.4rem;
+  border-radius: 6px;
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  border: none;
+}
+
+.contact-form-heading {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 
 /* ===== FOOTER ===== */
