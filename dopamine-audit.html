@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dopamine Baseline Audit — Dr. Nick</title>
+<meta name="description" content="Map your dopamine system in 5 minutes. Discover what's spiking you too high and what healthy builders you're missing." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg-0: #07090f;
+    --bg-1: #0b0e17;
+    --bg-2: #11151f;
+    --bg-3: #171c29;
+    --line: rgba(255,255,255,0.06);
+    --line-strong: rgba(255,255,255,0.12);
+    --ink-0: #f4efe3;
+    --ink-1: #d8d3c4;
+    --ink-2: #9a9586;
+    --ink-3: #6b6758;
+    --accent: #C9A44C;
+    --accent-soft: rgba(201,164,76,0.14);
+    --accent-ink: #1a1408;
+    --danger: #c96a4c;
+    --danger-soft: rgba(201,106,76,0.14);
+    --good: #7fae7a;
+    --good-soft: rgba(127,174,122,0.14);
+    --serif: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--ink-0);
+    background: var(--bg-0);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  .bg-layer {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 20%, rgba(201,164,76,0.04), transparent 60%),
+      radial-gradient(ellipse 90% 70% at 50% 100%, rgba(59,78,120,0.12), transparent 65%),
+      linear-gradient(180deg, var(--bg-0), var(--bg-1) 40%, var(--bg-0));
+  }
+  .bg-grid {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      linear-gradient(to right, var(--line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,0,0,0.9), transparent 80%);
+  }
+
+  #root { position: relative; z-index: 1; }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .display {
+    font-family: var(--serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 0.98;
+    color: var(--ink-0);
+  }
+  .display em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .serif { font-family: var(--serif); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    font-family: var(--sans); font-size: 14px; font-weight: 600;
+    padding: 14px 22px; border-radius: 10px;
+    border: 1px solid transparent; cursor: pointer;
+    transition: transform .12s ease, background .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
+    letter-spacing: 0.01em;
+    -webkit-user-select: none; user-select: none;
+    text-decoration: none;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary {
+    background: var(--accent); color: var(--accent-ink);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 10px 30px -12px rgba(201,164,76,0.6);
+  }
+  .btn-primary:hover { background: #d7b35a; }
+  .btn-primary:disabled { background: #3a3527; color: #706850; cursor: not-allowed; box-shadow: none; }
+  .btn-ghost {
+    background: transparent; color: var(--ink-0);
+    border-color: var(--line-strong);
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-link {
+    background: transparent; color: var(--ink-2); border: none; padding: 8px 10px; font-size: 13px; cursor: pointer;
+  }
+  .btn-link:hover { color: var(--ink-0); }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 16px; border: 1px solid var(--line-strong); border-radius: 999px;
+    color: var(--accent); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    background: rgba(201,164,76,0.04);
+  }
+  .chip .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); opacity: 0.8; }
+
+  .shell { max-width: 1180px; margin: 0 auto; padding: 32px 40px 80px; }
+  @media (max-width: 720px) { .shell { padding: 24px 20px 60px; } }
+
+  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 6px 0 40px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 20px; color: var(--ink-0); font-weight: 600; text-decoration: none; }
+  .brand-mark {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, var(--accent), #6b5526 70%, #2a2010);
+    box-shadow: 0 0 24px rgba(201,164,76,0.35);
+    flex-shrink: 0;
+  }
+  .brand small { color: var(--ink-2); font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; margin-left: 4px;}
+  .topnav { display: flex; gap: 32px; color: var(--ink-2); font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; }
+  .topnav a { color: inherit; text-decoration: none; }
+  .topnav a:hover { color: var(--ink-0); }
+  @media (max-width: 720px) { .topnav { display: none; } }
+
+  .intro { padding-top: 40px; display: grid; grid-template-columns: 1.2fr 0.9fr; gap: 80px; align-items: center; }
+  @media (max-width: 960px) { .intro { grid-template-columns: 1fr; gap: 48px; } }
+  .intro h1 { font-size: clamp(52px, 7vw, 96px); margin: 18px 0 24px; }
+  .intro p.lede { font-size: 17px; line-height: 1.6; color: var(--ink-1); max-width: 52ch; }
+  .intro .meta { display: flex; gap: 28px; margin-top: 36px; color: var(--ink-2); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; }
+  .intro .meta b { display:block; color: var(--ink-0); font-family: var(--serif); font-size: 22px; font-weight: 500; letter-spacing: 0; text-transform: none; margin-bottom: 4px; }
+
+  .intro-cta { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+
+  .dial-card {
+    position: relative; aspect-ratio: 1 / 1.1; border-radius: 20px;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 110%, rgba(201,164,76,0.18), transparent 60%),
+      linear-gradient(180deg, var(--bg-2), var(--bg-1));
+    border: 1px solid var(--line-strong);
+    overflow: hidden;
+    box-shadow: 0 40px 100px -40px rgba(0,0,0,0.8), 0 1px 0 rgba(255,255,255,0.03) inset;
+  }
+  .dial-card .label-top, .dial-card .label-bot {
+    position: absolute; left: 22px; right: 22px; display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.1em;
+  }
+  .dial-card .label-top { top: 22px; }
+  .dial-card .label-bot { bottom: 22px; }
+  .dial-card svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .dial-card .center {
+    position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%);
+    text-align: center;
+  }
+  .dial-card .center .big { font-family: var(--serif); font-weight: 500; font-size: clamp(64px, 10vw, 110px); color: var(--ink-0); line-height: 1; }
+  .dial-card .center .cap { color: var(--ink-2); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 8px;}
+
+  .progress-shell { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); background: rgba(7,9,15,0.72); border-bottom: 1px solid var(--line); }
+  .progress-inner { max-width: 1180px; margin: 0 auto; padding: 18px 40px; display: flex; align-items: center; gap: 24px;}
+  @media (max-width: 720px) { .progress-inner { padding: 14px 20px; gap: 14px; } }
+  .progress-bar { flex: 1; height: 2px; background: var(--line-strong); border-radius: 2px; overflow: hidden; position: relative; }
+  .progress-bar > span { display: block; height: 100%; background: var(--accent); transition: width .4s cubic-bezier(.2,.8,.2,1); box-shadow: 0 0 14px var(--accent); }
+  .progress-text { color: var(--ink-2); font-family: var(--mono); font-size: 12px; white-space: nowrap;}
+  .progress-back { color: var(--ink-2); font-size: 12px; font-family: var(--sans); letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; border: none; background: none; }
+  .progress-back:hover { color: var(--ink-0); }
+
+  .q-stage { max-width: 820px; margin: 0 auto; padding: 60px 40px 120px; }
+  @media (max-width: 720px) { .q-stage { padding: 36px 20px 80px; } }
+  .q-section-tag { display: flex; align-items: center; gap: 12px; color: var(--accent); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; margin-bottom: 28px;}
+  .q-section-tag .line { flex: 1; height: 1px; background: linear-gradient(to right, var(--accent-soft), transparent); }
+  .q-number { font-family: var(--mono); color: var(--ink-3); font-size: 12px; letter-spacing: 0.1em; }
+  .q-prompt { font-family: var(--serif); font-size: clamp(32px, 4.4vw, 50px); line-height: 1.1; font-weight: 500; color: var(--ink-0); margin: 10px 0 36px; letter-spacing: -0.01em; text-wrap: pretty;}
+
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .opt {
+    position: relative;
+    display: flex; align-items: center; gap: 18px;
+    padding: 20px 22px;
+    border: 1px solid var(--line-strong);
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+    cursor: pointer;
+    transition: border-color .2s, background .2s, transform .08s;
+    text-align: left;
+    font-family: var(--sans); color: var(--ink-0); font-size: 16px;
+  }
+  .opt:hover { border-color: var(--ink-3); background: rgba(255,255,255,0.02); }
+  .opt .radio {
+    width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid var(--ink-3);
+    display: grid; place-items: center; flex-shrink: 0;
+    transition: border-color .2s;
+  }
+  .opt .radio::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); transform: scale(0); transition: transform .2s cubic-bezier(.2,.9,.3,1.4);}
+  .opt .label { flex: 1; }
+  .opt .pts {
+    font-family: var(--mono); font-size: 11px; color: var(--ink-3);
+    padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line-strong);
+    white-space: nowrap;
+  }
+  .opt.selected { border-color: var(--accent); background: var(--accent-soft); }
+  .opt.selected .radio { border-color: var(--accent); }
+  .opt.selected .radio::after { transform: scale(1); }
+  .opt.selected .pts { color: var(--accent); border-color: rgba(201,164,76,0.5); }
+  .opt.builder .pts { color: var(--good); border-color: rgba(127,174,122,0.35); }
+  .opt.selected.builder { border-color: var(--good); background: var(--good-soft); }
+  .opt.selected.builder .radio { border-color: var(--good); }
+  .opt.selected.builder .radio::after { background: var(--good); }
+
+  .q-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; gap: 16px; flex-wrap: wrap; }
+  .q-foot .kb { color: var(--ink-3); font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em;}
+  .q-foot .kb kbd { display: inline-block; background: var(--bg-3); border: 1px solid var(--line-strong); border-radius: 4px; padding: 2px 6px; font-family: var(--mono); font-size: 11px; color: var(--ink-1); margin: 0 2px; }
+
+  .fade-enter { opacity: 0; transform: translateY(12px); }
+  .fade-enter-active { opacity: 1; transform: translateY(0); transition: opacity .35s, transform .35s; }
+
+  .result-hero {
+    padding-top: 40px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+  }
+  @media (max-width: 960px) { .result-hero { grid-template-columns: 1fr; gap: 40px; } }
+  .result-score {
+    border: 1px solid var(--line-strong); border-radius: 20px;
+    background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
+    padding: 40px; text-align: center; position: relative; overflow: hidden;
+  }
+  .result-score::before { content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--accent-soft), transparent 60%);
+    pointer-events: none;
+  }
+  .result-score .value { font-family: var(--serif); font-size: clamp(100px, 14vw, 180px); line-height: 0.9; font-weight: 500; color: var(--ink-0); letter-spacing: -0.02em; position: relative; }
+  .result-score .value .sign { font-size: 0.5em; color: var(--accent); vertical-align: 0.35em; margin-right: 4px;}
+  .result-score .tier-label { font-family: var(--sans); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin: 16px 0 6px; position: relative;}
+  .result-score .tier-title { font-family: var(--serif); font-size: 32px; color: var(--ink-0); margin-bottom: 12px; font-weight: 500; position: relative;}
+  .result-score .tier-copy { color: var(--ink-1); line-height: 1.6; max-width: 42ch; margin: 0 auto; position: relative; }
+
+  .meter { margin-top: 28px; position: relative; }
+  .meter-track { height: 6px; background: linear-gradient(to right, #3f6b3a 0%, #6b6b3a 30%, #8a6a3a 60%, #8a4a3a 100%); border-radius: 3px; position: relative; }
+  .meter-marker { position: absolute; top: -6px; transform: translateX(-50%); width: 3px; height: 18px; background: var(--ink-0); border-radius: 2px; box-shadow: 0 0 12px rgba(255,255,255,0.6); }
+  .meter-ticks { display: flex; justify-content: space-between; margin-top: 10px; color: var(--ink-3); font-family: var(--mono); font-size: 10px; letter-spacing: 0.05em; }
+
+  .breakdown { display: flex; flex-direction: column; gap: 22px; }
+  .breakdown h3 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 0 0 4px; }
+  .breakdown .cap { color: var(--ink-2); font-size: 13px; margin-bottom: 12px; }
+  .bar-row { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .bar-row:last-child { border-bottom: none; }
+  .bar-row .lbl { font-size: 14px; color: var(--ink-1); }
+  .bar-row .bar { grid-column: 1 / -1; height: 2px; background: var(--line-strong); border-radius: 2px; overflow: hidden; }
+  .bar-row .bar span { display: block; height: 100%; background: var(--accent); border-radius: 2px; transition: width 1s cubic-bezier(.2,.8,.2,1); }
+  .bar-row.builder .bar span { background: var(--good); }
+  .bar-row .val { font-family: var(--mono); font-size: 12px; color: var(--ink-3);}
+  .bar-row .val.hot { color: var(--accent); }
+  .bar-row .val.good { color: var(--good); }
+
+  .section-title { font-family: var(--serif); font-size: 42px; font-weight: 500; letter-spacing: -0.01em; margin: 80px 0 8px; }
+  .section-kicker { color: var(--ink-2); font-size: 14px; margin-bottom: 32px; max-width: 60ch; line-height: 1.5;}
+  .sugg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px;}
+  .sugg {
+    position: relative; padding: 26px 24px; border-radius: 14px;
+    border: 1px solid var(--line-strong); background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .sugg::before {
+    content: ''; position: absolute; left: 0; top: 24px; bottom: 24px; width: 2px; background: var(--accent); border-radius: 2px;
+  }
+  .sugg.builder::before { background: var(--good); }
+  .sugg .tag { font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.1em; text-transform: uppercase; }
+  .sugg.builder .tag { color: var(--good); }
+  .sugg.spiker .tag { color: var(--accent); }
+  .sugg h4 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin: 0; line-height: 1.2; color: var(--ink-0);}
+  .sugg p { margin: 0; color: var(--ink-1); font-size: 14px; line-height: 1.55;}
+  .sugg .num { position: absolute; top: 20px; right: 22px; font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
+
+  .final {
+    margin-top: 80px; padding: 56px 48px;
+    border-radius: 20px; border: 1px solid var(--line-strong);
+    background:
+      radial-gradient(ellipse 70% 90% at 100% 0%, var(--accent-soft), transparent 60%),
+      linear-gradient(180deg, var(--bg-2), var(--bg-0));
+    position: relative; overflow: hidden;
+  }
+  .final .eyebrow { margin-bottom: 18px; }
+  .final h2 { font-family: var(--serif); font-size: clamp(40px, 5vw, 60px); line-height: 1.05; margin: 0 0 24px; font-weight: 500; max-width: 22ch; letter-spacing: -0.01em;}
+  .final .rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin: 32px 0;}
+  .final .rule { display: flex; gap: 14px; align-items: flex-start; }
+  .final .rule .n { font-family: var(--mono); color: var(--accent); font-size: 12px; width: 28px; padding-top: 2px;}
+  .final .rule p { margin: 0; color: var(--ink-1); line-height: 1.55; font-size: 15px;}
+  .final .rule p b { color: var(--ink-0); font-weight: 600;}
+  .final .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 32px;}
+  .final .signoff { font-family: var(--serif); font-style: italic; color: var(--ink-2); font-size: 18px; margin-top: 16px; }
+
+  @keyframes spark {
+    0% { box-shadow: 0 0 0 0 rgba(201,164,76,0.6); }
+    100% { box-shadow: 0 0 0 24px rgba(201,164,76,0); }
+  }
+  .opt.just-picked { animation: spark .6s ease-out; }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 48px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);}
+  .stat { padding: 20px 0; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: none; }
+  .stat .v { font-family: var(--serif); font-size: 28px; color: var(--ink-0); font-weight: 500; }
+  .stat .l { color: var(--ink-2); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 2px;}
+
+  .scroll-hint { text-align: center; color: var(--ink-3); margin-top: 60px; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;}
+  .scroll-hint .arrow { display: block; margin: 8px auto; width: 1px; height: 24px; background: var(--ink-3); }
+</style>
+</head>
+<body>
+  <div class="bg-layer"></div>
+  <div class="bg-grid"></div>
+  <div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel">
+const { useState, useEffect, useMemo, useRef, useCallback } = React;
+
+// ---------- Data ----------
+const SPIKERS = [
+  {
+    id: "q1", kind: "spiker",
+    prompt: "How often do you check your phone within 10 minutes of waking up?",
+    topic: "Morning phone",
+    options: [
+      { label: "Never", pts: 0 },
+      { label: "Sometimes", pts: 2 },
+      { label: "Most days", pts: 4 },
+      { label: "Every day", pts: 5 },
+    ],
+    suggestion: { title: "Morning phone lock", copy: "Don't touch your phone for the first hour after waking. Charge it in another room tonight." }
+  },
+  {
+    id: "q2", kind: "spiker",
+    prompt: "How many hours per day on social media — Instagram, Twitter, Facebook?",
+    topic: "Social media",
+    options: [
+      { label: "Less than 30 min", pts: 0 },
+      { label: "30 min to 1 hr", pts: 2 },
+      { label: "1 to 3 hrs", pts: 4 },
+      { label: "3+ hrs", pts: 5 },
+    ],
+    suggestion: { title: "7-day social detox", copy: "Delete the apps from your phone for 7 days. See what happens to your focus and mood." }
+  },
+  {
+    id: "q3", kind: "spiker",
+    prompt: "How much short-form video do you watch daily — Reels, Shorts, TikTok?",
+    topic: "Short-form video",
+    options: [
+      { label: "None", pts: 0 },
+      { label: "Less than 30 min", pts: 2 },
+      { label: "30 min to 1 hr", pts: 4 },
+      { label: "1+ hrs", pts: 5 },
+    ],
+    suggestion: { title: "Cut the scroll", copy: "This is the single fastest spiker in modern life. Remove the apps — not just limits. Your baseline will thank you." }
+  },
+  {
+    id: "q4", kind: "spiker",
+    prompt: "How often do you consume porn or masturbate?",
+    topic: "Porn / self-stimulation",
+    options: [
+      { label: "Rarely or never", pts: 0 },
+      { label: "1–2 times per week", pts: 2 },
+      { label: "3–5 times per week", pts: 4 },
+      { label: "Daily or multiple times daily", pts: 5 },
+    ],
+    suggestion: { title: "7-day reset", copy: "Replace the habit with exercise, a cold shower, or a walk. The urge passes; the rewiring sticks." }
+  },
+  {
+    id: "q5", kind: "spiker",
+    prompt: "How many hours of gaming per day, especially mobile or competitive?",
+    topic: "Gaming",
+    options: [
+      { label: "None", pts: 0 },
+      { label: "Less than 1 hr", pts: 2 },
+      { label: "1 to 3 hrs", pts: 4 },
+      { label: "3+ hrs", pts: 5 },
+    ],
+    suggestion: { title: "Set a hard gaming cap", copy: "Use Screen Time or an app blocker. Make the limit something your future self would thank you for." }
+  },
+  {
+    id: "q6", kind: "spiker",
+    prompt: "How often do you eat processed or sugary foods?",
+    topic: "Processed sugar",
+    options: [
+      { label: "Rarely", pts: 0 },
+      { label: "A few times per week", pts: 2 },
+      { label: "Most days", pts: 4 },
+      { label: "Multiple times per day", pts: 5 },
+    ],
+    suggestion: { title: "7-day sugar cut", copy: "Processed sugar spikes dopamine like a drug. A week without it rebuilds your baseline faster than anything else on this list." }
+  },
+  {
+    id: "q7", kind: "spiker",
+    prompt: "How much caffeine do you consume, and when?",
+    topic: "Caffeine",
+    options: [
+      { label: "None or minimal", pts: 0 },
+      { label: "1 cup, morning only", pts: 1 },
+      { label: "2+ cups, morning only", pts: 2 },
+      { label: "Multiple cups, including afternoon", pts: 4 },
+      { label: "Throughout the day, including evening", pts: 5 },
+    ],
+    suggestion: { title: "No caffeine after 12pm", copy: "Cut your total intake in half for two weeks. Sleep quality — the real dopamine reset — comes back almost immediately." }
+  },
+  {
+    id: "q8", kind: "spiker",
+    prompt: "Do you constantly consume audio — music, podcasts, videos — even while walking, commuting, or working out?",
+    topic: "Constant audio",
+    options: [
+      { label: "Rarely. I tolerate silence.", pts: 0 },
+      { label: "Sometimes", pts: 2 },
+      { label: "Most of the time", pts: 4 },
+      { label: "Always. I hate silence.", pts: 5 },
+    ],
+    suggestion: { title: "One silent walk a day", copy: "Leave the headphones at home. Let your mind wander. Boredom is where ideas happen." }
+  },
+];
+
+const BUILDERS = [
+  {
+    id: "q9", kind: "builder",
+    prompt: "Do you get direct sunlight within 30 minutes of waking up?",
+    topic: "Morning sunlight",
+    options: [
+      { label: "Daily", pts: -5 },
+      { label: "A few times per week", pts: -3 },
+      { label: "Rarely", pts: -1 },
+      { label: "Never", pts: 0 },
+    ],
+    suggestion: { title: "5 minutes of morning sun", copy: "Get outside within 30 minutes of waking. No sunglasses. Free dopamine, better sleep tonight." }
+  },
+  {
+    id: "q10", kind: "builder",
+    prompt: "How often do you exercise — ideally without music or podcasts?",
+    topic: "Exercise",
+    options: [
+      { label: "Daily", pts: -5 },
+      { label: "3–5 times per week", pts: -4 },
+      { label: "1–2 times per week", pts: -2 },
+      { label: "Rarely or never", pts: 0 },
+    ],
+    suggestion: { title: "Start with a 10-min walk", copy: "Daily. Outside. No headphones at least once a week. Build from there — consistency beats intensity." }
+  },
+  {
+    id: "q11", kind: "builder",
+    prompt: "How often do you have meaningful in-person conversations — not texting, not small talk?",
+    topic: "Real conversations",
+    options: [
+      { label: "Daily", pts: -5 },
+      { label: "A few times per week", pts: -3 },
+      { label: "Rarely", pts: -1 },
+      { label: "Never", pts: 0 },
+    ],
+    suggestion: { title: "One real conversation this week", copy: "Coffee with a friend. Call your parents. Connection is medicine — the kind your nervous system was built for." }
+  },
+  {
+    id: "q12", kind: "builder",
+    prompt: "How many hours of quality sleep do you average per night?",
+    topic: "Sleep",
+    options: [
+      { label: "7–9 hours", pts: -5 },
+      { label: "6–7 hours", pts: -2 },
+      { label: "5–6 hours", pts: 0 },
+      { label: "Less than 5 hours", pts: 2 },
+    ],
+    suggestion: { title: "Fix sleep first", copy: "Sleep is non-negotiable. Every other lever on this page is weaker if you're running on less than 7 hours. Start here." }
+  },
+  {
+    id: "q13", kind: "builder",
+    prompt: "Do you allow yourself to be bored — no phone during walks, waiting in line, eating alone?",
+    topic: "Boredom",
+    options: [
+      { label: "Often. I embrace boredom.", pts: -5 },
+      { label: "Sometimes", pts: -3 },
+      { label: "Rarely", pts: -1 },
+      { label: "Never. I always have stimulation.", pts: 0 },
+    ],
+    suggestion: { title: "10 minutes of boredom daily", copy: "Phone in another room. Eat one meal in silence. Sit on a bench. Your baseline drops fast when you let it." }
+  },
+  {
+    id: "q14", kind: "builder",
+    prompt: "How often do you engage in deep work or flow — uninterrupted focus for 60+ minutes?",
+    topic: "Deep work",
+    options: [
+      { label: "Daily", pts: -5 },
+      { label: "A few times per week", pts: -3 },
+      { label: "Rarely", pts: -1 },
+      { label: "Never", pts: 0 },
+    ],
+    suggestion: { title: "One 25-minute focus block", copy: "Start small. Phone off. One task. Grow from there. Flow is the most reliable dopamine builder on earth." }
+  },
+];
+
+const ALL_Q = [...SPIKERS, ...BUILDERS];
+
+const TIERS = [
+  {
+    min: -Infinity, max: -0.01,
+    label: "Dopamine Optimized",
+    tag: "Tier 00",
+    copy: "Your dopamine system is in great shape. You're spiking low and building high. Keep doing what you're doing — and notice what's already working."
+  },
+  {
+    min: 0, max: 10,
+    label: "Mild Imbalance",
+    tag: "Tier 01",
+    copy: "Some habits are draining you, but you're doing plenty of things right. Small tweaks — not an overhaul — will move the needle fast."
+  },
+  {
+    min: 11, max: 25,
+    label: "Moderate Overload",
+    tag: "Tier 02",
+    copy: "Your dopamine system is fried. Focus feels impossible because your baseline is too high. Boring tasks feel unbearable. Time to reset."
+  },
+  {
+    min: 26, max: 40,
+    label: "Severe Overload",
+    tag: "Tier 03",
+    copy: "You're in serious dopamine debt. Your brain has adapted to constant high stimulation, making normal life feel flat. Reversible — but it takes a real reset."
+  },
+  {
+    min: 41, max: Infinity,
+    label: "Critical Burnout",
+    tag: "Tier 04",
+    copy: "Your reward system is seriously compromised. Motivation feels gone. Focus is near impossible. The good news: your brain can heal. The hard news: it will require discipline and discomfort."
+  }
+];
+
+const STORAGE_KEY = "dopamine-audit-v1";
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch (e) { return null; }
+}
+function saveState(s) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch (e) {}
+}
+
+// ---------- UI ----------
+function Topbar() {
+  return (
+    <div className="topbar">
+      <a href="/" className="brand">
+        <span className="brand-mark" />
+        <span>Dr. Nick</span>
+        <small>· Baseline Audit</small>
+      </a>
+      <nav className="topnav">
+        <a href="/#about">About</a>
+        <a href="/#coaching">Coaching</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  );
+}
+
+function DialCard() {
+  const ticks = 60;
+  const marker = 42;
+  return (
+    <div className="dial-card">
+      <div className="label-top">
+        <span>ID · 0414</span>
+        <span>BASELINE · AWAITING</span>
+      </div>
+
+      <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+        <circle cx="200" cy="200" r="170" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+        <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+        <circle cx="200" cy="200" r="110" fill="none" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+        {Array.from({length: ticks}).map((_, i) => {
+          const a = (i / ticks) * Math.PI * 2 - Math.PI / 2;
+          const r1 = 170, r2 = i % 5 === 0 ? 158 : 164;
+          const x1 = 200 + Math.cos(a)*r1, y1 = 200 + Math.sin(a)*r1;
+          const x2 = 200 + Math.cos(a)*r2, y2 = 200 + Math.sin(a)*r2;
+          const isActive = i <= marker;
+          return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2}
+            stroke={isActive ? "var(--accent)" : "rgba(255,255,255,0.12)"}
+            strokeWidth={i % 5 === 0 ? 1.5 : 1}
+            opacity={isActive ? 1 : 0.7}/>;
+        })}
+        {(() => {
+          const a = (marker / ticks) * Math.PI * 2 - Math.PI / 2;
+          const x = 200 + Math.cos(a)*176, y = 200 + Math.sin(a)*176;
+          return <g>
+            <circle cx={x} cy={y} r="6" fill="var(--accent)" />
+            <circle cx={x} cy={y} r="14" fill="var(--accent)" opacity="0.2" />
+          </g>;
+        })()}
+      </svg>
+
+      <div className="center">
+        <div className="big">5<span style={{fontSize: '0.4em', color: 'var(--ink-3)', marginLeft: 4}}>min</span></div>
+        <div className="cap">Est. time to complete</div>
+      </div>
+
+      <div className="label-bot">
+        <span>14 QUESTIONS</span>
+        <span>100% PRIVATE</span>
+      </div>
+    </div>
+  );
+}
+
+function Intro({ onStart, hasProgress, onResume }) {
+  return (
+    <div className="shell">
+      <Topbar />
+      <div className="intro">
+        <div>
+          <span className="chip"><span className="dot"/>For ADHD &amp; focus · Dr. Nick</span>
+          <h1 className="display">
+            Your dopamine<br/>
+            is <em>louder</em> than<br/>
+            your goals.
+          </h1>
+          <p className="lede">
+            Your dopamine system runs your focus, your motivation, and your ability to enjoy simple things.
+            This audit maps two forces: what's <b style={{color:'var(--ink-0)'}}>spiking</b> you too high, and what healthy builders you're missing.
+            Five minutes. No one sees this but you.
+          </p>
+
+          <div className="intro-cta">
+            {hasProgress ? (
+              <>
+                <button className="btn btn-primary" onClick={onResume}>Resume audit →</button>
+                <button className="btn btn-ghost" onClick={onStart}>Start over</button>
+              </>
+            ) : (
+              <>
+                <button className="btn btn-primary" onClick={onStart}>Begin audit →</button>
+                <button className="btn btn-ghost" onClick={() => document.getElementById('how').scrollIntoView({behavior: 'smooth', block: 'start'})}>How it works</button>
+              </>
+            )}
+          </div>
+
+          <div className="stat-row">
+            <div className="stat"><div className="v">14</div><div className="l">Questions</div></div>
+            <div className="stat"><div className="v">5 min</div><div className="l">To complete</div></div>
+            <div className="stat"><div className="v">Honest</div><div className="l">Non-judgmental</div></div>
+          </div>
+        </div>
+
+        <DialCard />
+      </div>
+
+      <div id="how" style={{marginTop: 140}}>
+        <div className="eyebrow">The two forces</div>
+        <h2 className="display" style={{fontSize: 'clamp(40px, 5vw, 64px)', margin: '12px 0 40px', maxWidth: '18ch'}}>
+          Spikers pull you <em>up and flat</em>. Builders pull you steady.
+        </h2>
+
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24}}>
+          <div style={{padding: 32, border: '1px solid var(--line-strong)', borderRadius: 16, background: 'linear-gradient(180deg, var(--bg-2), var(--bg-1))'}}>
+            <div style={{fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--accent)', letterSpacing: '0.2em', textTransform: 'uppercase'}}>Part 01 · Spikers</div>
+            <h3 style={{fontFamily: 'var(--serif)', fontSize: 26, fontWeight: 500, margin: '10px 0 12px'}}>What's spiking you too high</h3>
+            <p style={{color: 'var(--ink-1)', fontSize: 14, lineHeight: 1.6, margin: 0}}>
+              Phone-first mornings, short-form scroll, sugar, gaming, constant audio. Each hit bumps your baseline
+              a little higher — until boring things stop feeling worth doing.
+            </p>
+            <div style={{marginTop: 20, display: 'flex', flexWrap: 'wrap', gap: 8}}>
+              {SPIKERS.map(s => <span key={s.id} style={{fontSize: 12, padding: '6px 10px', border: '1px solid var(--line-strong)', borderRadius: 999, color: 'var(--ink-2)'}}>{s.topic}</span>)}
+            </div>
+          </div>
+
+          <div style={{padding: 32, border: '1px solid var(--line-strong)', borderRadius: 16, background: 'linear-gradient(180deg, var(--bg-2), var(--bg-1))'}}>
+            <div style={{fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--good)', letterSpacing: '0.2em', textTransform: 'uppercase'}}>Part 02 · Builders</div>
+            <h3 style={{fontFamily: 'var(--serif)', fontSize: 26, fontWeight: 500, margin: '10px 0 12px'}}>What you're missing</h3>
+            <p style={{color: 'var(--ink-1)', fontSize: 14, lineHeight: 1.6, margin: 0}}>
+              Sunlight, sleep, movement, real conversations, boredom, deep work. These lower your baseline so
+              focus comes back online — and the simple things feel good again.
+            </p>
+            <div style={{marginTop: 20, display: 'flex', flexWrap: 'wrap', gap: 8}}>
+              {BUILDERS.map(s => <span key={s.id} style={{fontSize: 12, padding: '6px 10px', border: '1px solid var(--line-strong)', borderRadius: 999, color: 'var(--ink-2)'}}>{s.topic}</span>)}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="scroll-hint">
+        {hasProgress ? "Continue where you left off" : "Begin when ready"}
+        <span className="arrow"/>
+      </div>
+    </div>
+  );
+}
+
+function Question({ q, index, total, selected, onPick, onBack, onQuit }) {
+  const section = q.kind === "spiker" ? "Part 01 · Spikers" : "Part 02 · Builders";
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (/^[1-9]$/.test(e.key)) {
+        const i = parseInt(e.key, 10) - 1;
+        if (i < q.options.length) onPick(q.options[i]);
+      } else if (e.key === "Backspace" || e.key === "ArrowLeft") {
+        if (index > 0) onBack();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [q, index, onPick, onBack]);
+
+  const progress = (index / total) * 100;
+  const [justPicked, setJustPicked] = useState(null);
+
+  const handlePick = (opt) => {
+    setJustPicked(opt.label);
+    onPick(opt);
+    setTimeout(() => setJustPicked(null), 500);
+  };
+
+  return (
+    <div>
+      <div className="progress-shell">
+        <div className="progress-inner">
+          <button className="progress-back" onClick={onQuit}>← Exit</button>
+          <div className="progress-bar"><span style={{width: `${progress}%`}}/></div>
+          <div className="progress-text">{String(index+1).padStart(2,'0')} / {String(total).padStart(2,'0')}</div>
+        </div>
+      </div>
+
+      <div className="q-stage" key={q.id}>
+        <div className="q-section-tag">
+          <span>{section}</span>
+          <span className="line"/>
+          <span className="q-number">Q {String(index+1).padStart(2,'0')}</span>
+        </div>
+        <h2 className="q-prompt">{q.prompt}</h2>
+
+        <div className="options">
+          {q.options.map((o) => {
+            const isSelected = selected?.label === o.label;
+            const isJust = justPicked === o.label;
+            return (
+              <button
+                key={o.label}
+                className={`opt ${q.kind === "builder" ? "builder" : ""} ${isSelected ? "selected" : ""} ${isJust ? "just-picked" : ""}`}
+                onClick={() => handlePick(o)}
+              >
+                <span className="radio"/>
+                <span className="label">{o.label}</span>
+                <span className="pts">
+                  {q.kind === "builder"
+                    ? (o.pts === 0 ? "0" : o.pts > 0 ? `+${o.pts}` : `${o.pts}`)
+                    : (o.pts === 0 ? "0" : `+${o.pts}`)} pts
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="q-foot">
+          <div className="kb">
+            Press <kbd>1</kbd>–<kbd>{q.options.length}</kbd> to pick · <kbd>←</kbd> back
+          </div>
+          <div style={{display: 'flex', gap: 8}}>
+            {index > 0 && <button className="btn btn-ghost" onClick={onBack}>← Previous</button>}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function tierForScore(s) {
+  return TIERS.find(t => s >= t.min && s <= t.max) || TIERS[0];
+}
+
+function Meter({ score }) {
+  const min = -20, max = 60;
+  const pct = Math.max(0, Math.min(100, ((score - min) / (max - min)) * 100));
+  return (
+    <div className="meter">
+      <div className="meter-track">
+        <div className="meter-marker" style={{left: `${pct}%`}}/>
+      </div>
+      <div className="meter-ticks">
+        <span>-20</span><span>0</span><span>+10</span><span>+25</span><span>+40</span><span>+60</span>
+      </div>
+    </div>
+  );
+}
+
+function Results({ answers, onRestart }) {
+  const spikerResults = useMemo(() => SPIKERS.map(q => ({ q, answer: answers[q.id] })), [answers]);
+  const builderResults = useMemo(() => BUILDERS.map(q => ({ q, answer: answers[q.id] })), [answers]);
+
+  const total = useMemo(() => ALL_Q.reduce((sum, q) => sum + (answers[q.id]?.pts || 0), 0), [answers]);
+  const spikerTotal = spikerResults.reduce((s, x) => s + (x.answer?.pts || 0), 0);
+  const builderTotal = builderResults.reduce((s, x) => s + (x.answer?.pts || 0), 0);
+
+  const tier = tierForScore(total);
+
+  const suggestions = useMemo(() => {
+    const out = [];
+    spikerResults.forEach(({q, answer}) => {
+      if (answer && answer.pts >= 4) out.push({ kind: "spiker", topic: q.topic, ...q.suggestion });
+    });
+    builderResults.forEach(({q, answer}) => {
+      const best = Math.min(...q.options.map(o => o.pts));
+      if (answer && answer.pts > best) out.push({ kind: "builder", topic: q.topic, ...q.suggestion });
+    });
+    return out;
+  }, [spikerResults, builderResults]);
+
+  const pickedOne = suggestions.filter(s => s.kind === "spiker")[0];
+  const pickedTwo = suggestions.filter(s => s.kind === "builder")[0];
+
+  return (
+    <div className="shell">
+      <Topbar />
+
+      <div className="result-hero">
+        <div className="result-score">
+          <div className="tier-label">{tier.tag} · Your Baseline</div>
+          <div className="value">
+            {total > 0 && <span className="sign">+</span>}
+            {total < 0 && <span className="sign">–</span>}
+            {Math.abs(total)}
+          </div>
+          <div className="tier-title">{tier.label}</div>
+          <div className="tier-copy">{tier.copy}</div>
+          <Meter score={total}/>
+        </div>
+
+        <div className="breakdown">
+          <div>
+            <div className="eyebrow">Your map</div>
+            <h3 style={{margin: '6px 0 18px', fontFamily: 'var(--serif)', fontSize: 34, fontWeight: 500}}>
+              Where your points came from.
+            </h3>
+            <p style={{color: 'var(--ink-1)', lineHeight: 1.6, fontSize: 15, marginTop: 0, marginBottom: 28, maxWidth: '52ch'}}>
+              Spikers added <b style={{color: 'var(--accent)'}}>+{spikerTotal}</b>. Builders subtracted <b style={{color: 'var(--good)'}}>{builderTotal}</b>.
+              The gap between them is your baseline.
+            </p>
+          </div>
+
+          <div>
+            <div className="cap" style={{color: 'var(--accent)', fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase'}}>Spikers</div>
+            {spikerResults.map(({q, answer}) => {
+              const maxPts = Math.max(...q.options.map(o => o.pts));
+              const w = ((answer?.pts || 0) / maxPts) * 100;
+              const hot = (answer?.pts || 0) >= 4;
+              return (
+                <div key={q.id} className="bar-row">
+                  <div className="lbl">{q.topic}</div>
+                  <div className={`val ${hot ? 'hot' : ''}`}>{answer?.pts >= 0 ? `+${answer?.pts||0}` : answer?.pts}</div>
+                  <div className="bar"><span style={{width: `${w}%`}}/></div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div style={{marginTop: 24}}>
+            <div className="cap" style={{color: 'var(--good)', fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase'}}>Builders</div>
+            {builderResults.map(({q, answer}) => {
+              const best = Math.min(...q.options.map(o => o.pts));
+              const w = (answer?.pts ? (answer.pts / best) * 100 : 0);
+              const good = answer && answer.pts === best;
+              return (
+                <div key={q.id} className="bar-row builder">
+                  <div className="lbl">{q.topic}</div>
+                  <div className={`val ${good ? 'good' : ''}`}>{answer?.pts > 0 ? `+${answer?.pts}` : (answer?.pts || 0)}</div>
+                  <div className="bar"><span style={{width: `${Math.max(0,w)}%`}}/></div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <h2 className="section-title">Your prescription.</h2>
+      <p className="section-kicker">
+        Based on your answers, here's where to start. Don't try all of them.
+        Pick one spiker to cut and one builder to add this week.
+      </p>
+
+      {suggestions.length === 0 ? (
+        <div style={{padding: 40, border: '1px solid var(--line-strong)', borderRadius: 16, background: 'linear-gradient(180deg, var(--bg-2), var(--bg-1))'}}>
+          <div className="eyebrow" style={{color: 'var(--good)'}}>Nothing to prescribe</div>
+          <h3 style={{fontFamily: 'var(--serif)', fontSize: 28, margin: '8px 0 10px', fontWeight: 500}}>You're already doing the work.</h3>
+          <p style={{color: 'var(--ink-1)', lineHeight: 1.6, margin: 0, maxWidth: '52ch'}}>
+            Your spikers are low and your builders are consistent. Keep the habits that got you here. Notice what's already working.
+          </p>
+        </div>
+      ) : (
+        <div className="sugg-grid">
+          {suggestions.map((s, i) => (
+            <div key={i} className={`sugg ${s.kind}`}>
+              <div className="num">{String(i+1).padStart(2,'0')}</div>
+              <div className="tag">{s.kind === "spiker" ? "Cut" : "Add"} · {s.topic}</div>
+              <h4>{s.title}</h4>
+              <p>{s.copy}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="final">
+        <div className="eyebrow">One week. Two moves.</div>
+        <h2 className="display">
+          Your baseline is<br/>
+          <em>fixable</em>. The rule<br/>
+          is simple.
+        </h2>
+
+        <div className="rules">
+          <div className="rule">
+            <div className="n">01</div>
+            <p><b>Cut one spiker.</b> {pickedOne ? `Start with ${pickedOne.topic.toLowerCase()}.` : "Pick whichever feels most within reach."} Not all of them. Just one.</p>
+          </div>
+          <div className="rule">
+            <div className="n">02</div>
+            <p><b>Add one builder.</b> {pickedTwo ? `Start with ${pickedTwo.topic.toLowerCase()}.` : "Choose the one you already know works for you."} Small. Repeatable. Today.</p>
+          </div>
+          <div className="rule">
+            <div className="n">03</div>
+            <p><b>Do it for 30 days.</b> Stack small wins. Don't try to overhaul your life. Your brain will thank you.</p>
+          </div>
+        </div>
+
+        <div className="cta-row">
+          <a href="/#contact" className="btn btn-primary">Book a free 1st call →</a>
+          <button className="btn btn-ghost" onClick={onRestart}>Retake the audit</button>
+          <button className="btn btn-link" onClick={() => window.print()}>Save as PDF</button>
+        </div>
+
+        <p className="signoff">— Dr. Nick</p>
+      </div>
+    </div>
+  );
+}
+
+// ---------- App ----------
+function App() {
+  const [stage, setStage] = useState("intro");
+  const [qIndex, setQIndex] = useState(0);
+  const [answers, setAnswers] = useState({});
+
+  useEffect(() => {
+    const s = loadState();
+    if (s) {
+      setAnswers(s.answers || {});
+      setQIndex(s.qIndex || 0);
+      setStage(s.stage || "intro");
+    }
+  }, []);
+
+  useEffect(() => {
+    saveState({ stage, qIndex, answers });
+  }, [stage, qIndex, answers]);
+
+  const startFresh = () => {
+    setAnswers({});
+    setQIndex(0);
+    setStage("quiz");
+    window.scrollTo({top: 0, behavior: 'instant'});
+  };
+
+  const resume = () => {
+    setStage(Object.keys(answers).length === ALL_Q.length ? "results" : "quiz");
+    window.scrollTo({top: 0, behavior: 'instant'});
+  };
+
+  const quitToIntro = () => {
+    setStage("intro");
+    window.scrollTo({top: 0, behavior: 'instant'});
+  };
+
+  const handlePick = (opt) => {
+    const q = ALL_Q[qIndex];
+    const next = { ...answers, [q.id]: opt };
+    setAnswers(next);
+    setTimeout(() => {
+      if (qIndex + 1 >= ALL_Q.length) {
+        setStage("results");
+        window.scrollTo({top: 0, behavior: 'instant'});
+      } else {
+        setQIndex(qIndex + 1);
+      }
+    }, 260);
+  };
+
+  const handleBack = () => {
+    if (qIndex > 0) setQIndex(qIndex - 1);
+  };
+
+  const hasProgress = Object.keys(answers).length > 0 && stage !== "intro";
+
+  if (stage === "intro") {
+    return <Intro onStart={startFresh} onResume={resume} hasProgress={hasProgress}/>;
+  }
+  if (stage === "quiz") {
+    const q = ALL_Q[qIndex];
+    return <Question q={q} index={qIndex} total={ALL_Q.length} selected={answers[q.id]} onPick={handlePick} onBack={handleBack} onQuit={quitToIntro}/>;
+  }
+  return <Results answers={answers} onRestart={startFresh}/>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App/>);
+</script>
+</body>
+</html>
