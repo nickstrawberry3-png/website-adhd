@@ -182,9 +182,18 @@
           <div class="service-icon">
             <!-- stethoscope icon -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4.5 2.5c0 0-.5 5.5 2.5 8s7 2 8.5 4.5 1 6.5-3 7.5-7-1.5-7-5.5 3-5 6-5"></path>
-              <circle cx="19" cy="16" r="2"></circle>
-              <path d="M19 14v-3a3 3 0 0 0-3-3h-1"></path>
+              <!-- Left ear tip -->
+              <line x1="7.5" y1="5" x2="5.5" y2="2"></line>
+              <!-- Right ear tip -->
+              <line x1="16.5" y1="5" x2="18.5" y2="2"></line>
+              <!-- Binaural headset arch (midpoint at 12,7.5) -->
+              <path d="M7.5 5 Q12 10 16.5 5"></path>
+              <!-- Tubing down then curving right to chest piece -->
+              <path d="M12 7.5 L12 14 Q12 18 16 18"></path>
+              <!-- Chest piece outer ring -->
+              <circle cx="19" cy="18" r="3"></circle>
+              <!-- Diaphragm inner ring -->
+              <circle cx="19" cy="18" r="1.2"></circle>
             </svg>
           </div>
           <h3 data-i18n="s3-title">Medical School Applications</h3>
