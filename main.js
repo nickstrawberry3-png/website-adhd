@@ -71,14 +71,19 @@ const translations = {
     's3-body': "Getting into medical school takes more than grades. Personal statement editing, interview preparation (MMI & panel), and application strategy from someone who's been through it. Honest, strategic coaching that helps you stand out.",
     's2-title': 'Workshops & Talks',
     's2-body': 'Available for schools, universities, and organisations. Topics include ADHD awareness, focus and productivity, confidence, and navigating life transitions. Get in touch to discuss.',
+    'nav-get-in-touch': 'Get in Touch',
     'contact-label': 'Contact',
     'contact-title': 'Ready to Get Unstuck?',
     'contact-tagline': "Whether you're curious, skeptical, or just tired of feeling like you're not living up to your potential, please reach out :) First conversation is free so no pressure.",
     'contact-cta': 'Book a Free Call',
+    'contact-me-title': 'Contact Me',
     'form-name': 'Name',
     'form-email': 'Email',
     'form-message': 'Message',
     'form-send': 'Send',
+    'form-placeholder-name': 'Your name',
+    'form-placeholder-email': 'your@email.com',
+    'form-placeholder-message': "What's on your mind?",
     'footer': '© 2026 <span>Dr. Nick</span>. All rights reserved.',
   },
   zh: {
@@ -112,14 +117,19 @@ const translations = {
     's3-body': '考進醫學院，不只靠成績。我提供個人陳述文書修改、面試準備（MMI 及小組面試），以及來自親身走過這條路的人給你的申請策略。直接、有針對性的指導，幫你在眾多申請者中脫穎而出。',
     's2-title': '工作坊與演講',
     's2-body': '適合學校、大學和各類機構。主題包括 ADHD 認知、專注力與生產力、自信心，以及人生轉換期的應對。歡迎聯絡討論。',
+    'nav-get-in-touch': '聯絡我',
     'contact-label': '聯絡',
     'contact-title': '準備好突破了嗎',
     'contact-tagline': '不管你是好奇、半信半疑，還是只是累了、覺得自己沒有發揮出應有的潛力，都歡迎聯絡我 :) 第一次對話免費，不用有壓力。',
     'contact-cta': '預約免費通話',
+    'contact-me-title': '聯絡我',
     'form-name': '姓名',
     'form-email': '電子郵件',
     'form-message': '訊息',
     'form-send': '送出',
+    'form-placeholder-name': '你的姓名',
+    'form-placeholder-email': '你的信箱',
+    'form-placeholder-message': '有什麼想說的嗎？',
     'footer': '© 2026 <span>Dr. Nick</span>. 版權所有。',
   }
 };
@@ -137,6 +147,11 @@ function applyLanguage(lang) {
   document.querySelectorAll('[data-i18n-html]').forEach(el => {
     const key = el.getAttribute('data-i18n-html');
     if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.placeholder = t[key];
   });
 
   document.documentElement.lang = lang === 'zh' ? 'zh-TW' : 'en';

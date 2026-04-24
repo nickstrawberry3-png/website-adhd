@@ -78,7 +78,7 @@
       <li><a href="#about" data-i18n="nav-about">About</a></li>
       <li><a href="#services" data-i18n="nav-services">Services</a></li>
       <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
-      <li><a href="#get-in-touch">Get in Touch</a></li>
+      <li><a href="#get-in-touch" data-i18n="nav-get-in-touch">Get in Touch</a></li>
     </ul>
     <button class="lang-toggle" id="langToggle">中文</button>
   </nav>
@@ -236,21 +236,21 @@
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       <!-- Contact Form -->
       <div id="get-in-touch" class="contact-form-heading">
-        <h2 class="section-title">Contact Me</h2>
+        <h2 class="section-title" data-i18n="contact-me-title">Contact Me</h2>
         <div class="section-divider" style="margin-left:auto;margin-right:auto;"></div>
       </div>
       <form class="contact-form" action="https://formspree.io/f/mykleewg" method="POST">
         <div class="contact-form-group">
           <label for="contact-name" data-i18n="form-name">Name</label>
-          <input type="text" id="contact-name" name="name" required placeholder="Your name">
+          <input type="text" id="contact-name" name="name" required placeholder="Your name" data-i18n-placeholder="form-placeholder-name">
         </div>
         <div class="contact-form-group">
           <label for="contact-email-input" data-i18n="form-email">Email</label>
-          <input type="email" id="contact-email-input" name="email" required placeholder="your@email.com">
+          <input type="email" id="contact-email-input" name="email" required placeholder="your@email.com" data-i18n-placeholder="form-placeholder-email">
         </div>
         <div class="contact-form-group">
           <label for="contact-message" data-i18n="form-message">Message</label>
-          <textarea id="contact-message" name="message" rows="5" required placeholder="What's on your mind?"></textarea>
+          <textarea id="contact-message" name="message" rows="5" required placeholder="What's on your mind?" data-i18n-placeholder="form-placeholder-message"></textarea>
         </div>
         <button type="submit" class="btn-primary contact-form-submit" data-i18n="form-send">Send</button>
       </form>
