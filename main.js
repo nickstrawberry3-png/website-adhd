@@ -85,6 +85,11 @@ const translations = {
     'form-placeholder-email': 'your@email.com',
     'form-placeholder-message': "What's on your mind?",
     'footer': '© 2026 <span>Dr. Nick</span>. All rights reserved.',
+    'ebook-badge': 'New Release',
+    'ebook-title': 'ADHD Survival Guide',
+    'ebook-sub': "The no-fluff, practical guide I wish I had when I was first diagnosed. Real strategies for real ADHD brains — from someone who's lived it.",
+    'ebook-cta': 'Get the Ebook →',
+    'ebook-note': 'Instant digital download · No subscription',
   },
   zh: {
     'nav-about': '關於我',
@@ -131,6 +136,11 @@ const translations = {
     'form-placeholder-email': '你的信箱',
     'form-placeholder-message': '有什麼想說的嗎？',
     'footer': '© 2026 <span>Dr. Nick</span>. 版權所有。',
+    'ebook-badge': '全新上市',
+    'ebook-title': 'ADHD 生存指南',
+    'ebook-sub': '我希望確診時就有這本書。沒有廢話，只有實用策略——來自一個親身走過的人。',
+    'ebook-cta': '立即取得電子書 →',
+    'ebook-note': '即時數位下載 · 無需訂閱',
   }
 };
 
