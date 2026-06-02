@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stop Planning. Start Doing. — Dr. Nick Coaching</title>
+  <meta name="description" content="12-week 1-on-1 coaching built around how your brain actually works. Book a free Audit Call." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── RESET & TOKENS ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0a0a;
+      --bg-alt:    #111111;
+      --surface:   #1a1a1a;
+      --border:    #2a2a2a;
+      --text:      #f0f0f0;
+      --muted:     #9a9a9a;
+      --yellow:    #c9a84c;
+      --yellow-dk: #a8882e;
+      --radius:    10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    /* ── UTILITY ────────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section--alt {
+      background: var(--bg-alt);
+    }
+
+    .label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 16px;
+    }
+
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--yellow);
+      border-radius: 2px;
+      margin: 24px 0;
+    }
+
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero {
+      padding: 80px 0 64px;
+      text-align: center;
+    }
+
+    .hero__eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 20px;
+    }
+
+    .hero__headline {
+      font-size: clamp(2.4rem, 8vw, 3.6rem);
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .hero__headline span {
+      color: var(--yellow);
+    }
+
+    .hero__sub {
+      font-size: clamp(1rem, 3.5vw, 1.2rem);
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+
+    /* ── CTA BUTTON ─────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      background: var(--yellow);
+      color: #0a0a0a;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 17px 38px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.02em;
+    }
+
+    .btn:hover {
+      background: var(--yellow-dk);
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn--lg {
+      font-size: 1.1rem;
+      padding: 20px 48px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .btn-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* ── VIDEO PLACEHOLDER ──────────────────────────────── */
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: #1e1e1e;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin: 0 auto;
+    }
+
+    .video-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--muted);
+    }
+
+    .video-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-icon svg {
+      fill: var(--muted);
+      margin-left: 4px;
+    }
+
+    .video-label {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ── PROBLEM SECTION ────────────────────────────────── */
+    .problem__heading {
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      color: #ffffff;
+      margin-bottom: 28px;
+    }
+
+    .problem__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .problem__list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .problem__list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--yellow);
+      margin-top: 10px;
+    }
+
+    /* ── SOLUTION SECTION ───────────────────────────────── */
+    .solution__heading {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .solution__sub {
+      color: var(--muted);
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    .pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .pillar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--yellow);
+      border-radius: 4px 0 0 4px;
+    }
+
+    .pillar__number {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 8px;
+    }
+
+    .pillar__title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .pillar__desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── CTA SECTION ────────────────────────────────────── */
+    .cta-section {
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .cta-section__heading {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .cta-section__body {
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 40px;
+      font-size: 1rem;
+    }
+
+    .cta-section__body strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ── SOCIAL PROOF BAR ───────────────────────────────── */
+    .trust-bar {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      text-align: center;
+    }
+
+    .trust-item__num {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--yellow);
+      line-height: 1;
+    }
+
+    .trust-item__label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-top: 4px;
+    }
+
+    /* ── CALENDLY BLOCK ─────────────────────────────────── */
+    .calendly-section {
+      background: var(--bg-alt);
+      padding: 72px 0;
+    }
+
+    .calendly-heading {
+      font-size: clamp(1.4rem, 4.5vw, 2rem);
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .calendly-sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 36px;
+    }
+
+    /* ── PASTE YOUR CALENDLY EMBED CODE INSIDE THIS DIV ── */
+    .calendly-embed-container {
+      width: 100%;
+      min-height: 600px;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .calendly-placeholder {
+      color: var(--muted);
+    }
+
+    .calendly-placeholder p {
+      font-size: 0.95rem;
+      margin-top: 10px;
+    }
+
+    .calendly-placeholder code {
+      display: inline-block;
+      background: var(--bg);
+      color: var(--yellow);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: monospace;
+      margin-top: 8px;
+    }
+
+    /* ── MINIMAL FOOTER ─────────────────────────────────── */
+    .footer {
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: #444;
+    }
+
+    /* ── MOBILE OVERRIDES ───────────────────────────────── */
+    @media (max-width: 480px) {
+      .hero { padding: 56px 0 48px; }
+      .section { padding: 56px 0; }
+      .btn--lg { padding: 18px 32px; font-size: 1rem; }
+      .trust-bar { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero__eyebrow">12-Week 1-on-1 Coaching Programme</p>
+      <h1 class="hero__headline">Stop Planning.<br><span>Start Doing.</span></h1>
+      <p class="hero__sub">You already know what you need to do. Let's build a strategy tailored to how your brain works.</p>
+      <div class="btn-wrap">
+        <a href="#book" class="btn btn--lg">Book Your Free Audit Call →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       VIDEO PLACEHOLDER
+  ════════════════════════════════════════ -->
+  <section class="section" style="padding-top: 0; padding-bottom: 72px;">
+    <div class="container">
+      <div class="video-wrap">
+        <div class="video-inner">
+          <div class="video-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="video-label">VSL Video Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       TRUST BAR
+  ════════════════════════════════════════ -->
+  <div style="background: var(--bg-alt);">
+    <div class="container">
+      <div class="trust-bar">
+        <div class="trust-item">
+          <span class="trust-item__num">12</span>
+          <span class="trust-item__label">Weeks</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__num">1:1</span>
+          <span class="trust-item__label">Private Coaching</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__num">2×</span>
+          <span class="trust-item__label">Weekly Check-ins</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       PROBLEM
+  ════════════════════════════════════════ -->
+  <section class="section section--alt">
+    <div class="container">
+      <span class="label">The Problem</span>
+      <h2 class="problem__heading">You have the wrong manual<br>for your brain.</h2>
+      <div class="divider"></div>
+      <ul class="problem__list">
+        <li>Standard advice like "just try harder" or "buy a new planner" fails when your brain is wired differently.</li>
+        <li>You experience cycles of intense motivation followed by complete burnout.</li>
+        <li>You are smart and capable — but you are tired of constantly fighting yourself to get things done.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SOLUTION & PILLARS
+  ════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <span class="label">The Solution</span>
+      <h2 class="solution__heading">The 12-Week Programme</h2>
+      <p class="solution__sub">This is not a motivational bootcamp. Over 12 weeks, we work 1-on-1 to build customised systems tailored to your lifestyle and brain. From day one, we implement three core pillars:</p>
+
+      <div class="pillars">
+
+        <div class="pillar">
+          <p class="pillar__number">Pillar 01</p>
+          <p class="pillar__title">Your Customised Focus System</p>
+          <p class="pillar__desc">We tailor a system specifically for you — not a generic template, but a framework built around how your attention actually works.</p>
+        </div>
+
+        <div class="pillar">
+          <p class="pillar__number">Pillar 02</p>
+          <p class="pillar__title">The Habit Tracker</p>
+          <p class="pillar__desc">We lock in your routines using a customised tracking system built for your specific roadblocks — so progress becomes visible and consistent.</p>
+        </div>
+
+        <div class="pillar">
+          <p class="pillar__number">Pillar 03</p>
+          <p class="pillar__title">Twice-Weekly Accountability</p>
+          <p class="pillar__desc">We enforce strict check-ins. We set up your environment so the right choices become automatic, and you literally cannot ghost on your own goals — because I will not let you.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       CTA SECTION
+  ════════════════════════════════════════ -->
+  <section class="cta-section section--alt">
+    <div class="container">
+      <span class="label">Let's Talk</span>
+      <h2 class="cta-section__heading">Let's see if you are a fit.</h2>
+      <p class="cta-section__body">
+        Book a free <strong>Audit Call</strong> below. We will get to know each other and have an honest conversation about what is keeping you stuck. If this 12-week framework is the right vehicle for you, we will discuss how to move forward.
+      </p>
+      <div class="btn-wrap">
+        <a href="#book" class="btn btn--lg">Book Your Free Audit Call →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       CALENDLY EMBED
+  ════════════════════════════════════════ -->
+  <section id="book" class="calendly-section">
+    <div class="container">
+      <h2 class="calendly-heading">Book Your Free Audit Call</h2>
+      <p class="calendly-sub">Choose a time that works for you. No obligation.</p>
+
+      <!--
+        ════════════════════════════════════
+        PASTE YOUR CALENDLY EMBED CODE HERE
+        Replace the placeholder div below
+        with your Calendly inline embed snippet.
+        ════════════════════════════════════
+      -->
+      <div class="calendly-embed-container">
+        <div class="calendly-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          <p>Calendly Embed Goes Here</p>
+          <code>&lt;!-- Paste your Calendly inline widget code here --&gt;</code>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FOOTER (no links)
+  ════════════════════════════════════════ -->
+  <footer class="footer">
+    <p>© 2026 Dr. Nick. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
