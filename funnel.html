@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stop Planning. Start Doing. — Dr. Nick Coaching</title>
-  <meta name="description" content="12-week 1-on-1 coaching built around how your brain actually works. Book a free Audit Call." />
+  <title>12-Week Frictionless Focus — Stop Planning. Start Doing.</title>
+  <meta name="description" content="12-Week Frictionless Focus: 1-on-1 coaching built around how your brain actually works. Book a free Audit Call with Dr. Nick." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -364,38 +364,9 @@
       margin-bottom: 36px;
     }
 
-    /* ── PASTE YOUR CALENDLY EMBED CODE INSIDE THIS DIV ── */
-    .calendly-embed-container {
-      width: 100%;
-      min-height: 600px;
-      background: var(--surface);
-      border: 1px dashed var(--border);
+    .calendly-inline-widget {
       border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .calendly-placeholder {
-      color: var(--muted);
-    }
-
-    .calendly-placeholder p {
-      font-size: 0.95rem;
-      margin-top: 10px;
-    }
-
-    .calendly-placeholder code {
-      display: inline-block;
-      background: var(--bg);
-      color: var(--yellow);
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-family: monospace;
-      margin-top: 8px;
+      overflow: hidden;
     }
 
     /* ── MINIMAL FOOTER ─────────────────────────────────── */
@@ -425,7 +396,7 @@
   ════════════════════════════════════════ -->
   <section class="hero">
     <div class="container">
-      <p class="hero__eyebrow">12-Week 1-on-1 Coaching Programme</p>
+      <p class="hero__eyebrow">12-Week Frictionless Focus Programme</p>
       <h1 class="hero__headline">Stop Planning.<br><span>Start Doing.</span></h1>
       <p class="hero__sub">You already know what you need to do. Let's build a strategy tailored to how your brain works.</p>
       <div class="btn-wrap">
@@ -494,7 +465,7 @@
   <section class="section">
     <div class="container">
       <span class="label">The Solution</span>
-      <h2 class="solution__heading">The 12-Week Programme</h2>
+      <h2 class="solution__heading">12-Week Frictionless Focus</h2>
       <p class="solution__sub">This is not a motivational bootcamp. Over 12 weeks, we work 1-on-1 to build customised systems tailored to your lifestyle and brain. From day one, we implement three core pillars:</p>
 
       <div class="pillars">
@@ -529,7 +500,7 @@
       <span class="label">Let's Talk</span>
       <h2 class="cta-section__heading">Let's see if you are a fit.</h2>
       <p class="cta-section__body">
-        Book a free <strong>Audit Call</strong> below. We will get to know each other and have an honest conversation about what is keeping you stuck. If this 12-week framework is the right vehicle for you, we will discuss how to move forward.
+        Book a free <strong>Audit Call</strong> below. We will get to know each other and have an honest conversation about what is keeping you stuck. If <strong>12-Week Frictionless Focus</strong> is the right vehicle for you, we will discuss how to move forward.
       </p>
       <div class="btn-wrap">
         <a href="#book" class="btn btn--lg">Book Your Free Audit Call →</a>
@@ -545,25 +516,10 @@
       <h2 class="calendly-heading">Book Your Free Audit Call</h2>
       <p class="calendly-sub">Choose a time that works for you. No obligation.</p>
 
-      <!--
-        ════════════════════════════════════
-        PASTE YOUR CALENDLY EMBED CODE HERE
-        Replace the placeholder div below
-        with your Calendly inline embed snippet.
-        ════════════════════════════════════
-      -->
-      <div class="calendly-embed-container">
-        <div class="calendly-placeholder">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2"/>
-            <line x1="16" y1="2" x2="16" y2="6"/>
-            <line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
-          </svg>
-          <p>Calendly Embed Goes Here</p>
-          <code>&lt;!-- Paste your Calendly inline widget code here --&gt;</code>
-        </div>
-      </div>
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/drnickstraw/audit?hide_event_type_details=0&hide_gdpr_banner=1&background_color=111111&text_color=f0f0f0&primary_color=c9a84c" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
 
     </div>
   </section>
