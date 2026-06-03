@@ -1,0 +1,8 @@
+.DS_Store
+.claude/worktrees/
+
+# Large video files — host these on a CDN (e.g. Cloudflare R2, Bunny.net)
+# and update the src attribute in funnel.html accordingly.
+assets/VSL.mov
+assets/*.mov
+assets/*.mp4
