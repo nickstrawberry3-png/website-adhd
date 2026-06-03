@@ -162,12 +162,13 @@
       background: #000;
     }
 
-    .video-aspect iframe {
+    .video-aspect video {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       border: none;
+      object-fit: cover;
     }
 
     /* ── PROBLEM SECTION ────────────────────────────────── */
@@ -389,12 +390,13 @@
     <div class="container">
       <div class="video-wrap">
         <div class="video-aspect">
-          <iframe
-            src="https://streamable.com/e/qjci9w"
-            frameborder="0"
-            allowfullscreen
-            allow="autoplay; fullscreen"
-          ></iframe>
+          <video
+            src="https://pub-233d270a885f4fc3831fa6f418a2d596.r2.dev/VSL.mov"
+            poster="https://pub-233d270a885f4fc3831fa6f418a2d596.r2.dev/thumbnail.jpg"
+            controls
+            playsinline
+            preload="metadata"
+          ></video>
         </div>
       </div>
     </div>
