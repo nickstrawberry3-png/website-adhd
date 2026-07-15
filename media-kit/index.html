@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nick Straw (@dr_nickyyy) — Creator Media Kit</title>
+<meta name="description" content="UGC & brand partnership media kit for @dr_nickyyy — Instagram stats, video work, and contact." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e1117;
+    --bg-alt: #151b27;
+    --surface: #1a2234;
+    --border: #253047;
+    --text: #e8edf5;
+    --muted: #8a97b0;
+    --accent: #c9a84c;
+    --radius: 12px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  img, video { display: block; max-width: 100%; }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 3.5rem 0 2.5rem;
+    text-align: center;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 60%),
+      var(--bg);
+  }
+
+  .hero-photo {
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    margin: 0 auto 1.25rem;
+    overflow: hidden;
+    border: 2px solid rgba(201,168,76,0.4);
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.9rem;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 100px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.35rem;
+  }
+
+  .hero-handle {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .hero-niche {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ===== STATS BAR ===== */
+  .stats {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 0;
+  }
+
+  .stats-caption {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 1.5rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-num small {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #7fd490;
+    margin-left: 0.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ===== AUDIENCE ===== */
+  #audience {
+    padding: 3rem 0;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 1.9rem);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .audience-block {
+    margin-bottom: 1.75rem;
+  }
+
+  .audience-block h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .bar-row .bar-label {
+    width: 92px;
+    flex-shrink: 0;
+    color: var(--text);
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 8px;
+    background: var(--surface);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 100px;
+  }
+
+  .bar-pct {
+    width: 46px;
+    flex-shrink: 0;
+    text-align: right;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .locations-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .locations-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0.9rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.92rem;
+  }
+
+  .locations-list .loc-rank {
+    color: var(--accent);
+    font-weight: 600;
+    margin-right: 0.6rem;
+  }
+
+  .locations-list .loc-pct {
+    color: var(--muted);
+  }
+
+  /* ===== PORTFOLIO ===== */
+  #portfolio {
+    background: var(--bg-alt);
+    padding: 3rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .portfolio-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .card-video {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    max-height: 520px;
+    background: #000;
+    object-fit: contain;
+  }
+
+  .card-body {
+    padding: 1.1rem 1.25rem 1.3rem;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-brand {
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .pill {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.6rem;
+    border-radius: 100px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .pill-en {
+    background: rgba(59,130,246,0.14);
+    color: #6ea8fe;
+    border: 1px solid rgba(59,130,246,0.3);
+  }
+
+  .pill-zh {
+    background: rgba(201,168,76,0.14);
+    color: var(--accent);
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .card-desc {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  /* ===== BIO ===== */
+  #bio {
+    padding: 3rem 0;
+    text-align: center;
+  }
+
+  #bio p {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* ===== CONTACT ===== */
+  #contact {
+    padding: 2.5rem 0 4rem;
+    text-align: center;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.9rem 2.4rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #0e1117;
+  }
+
+  .btn-primary:hover {
+    background: #dbb95a;
+    transform: translateY(-2px);
+  }
+
+  .contact-secondary {
+    display: block;
+    margin-top: 1.1rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .contact-secondary:hover {
+    color: var(--accent);
+  }
+
+  footer {
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.78rem;
+    border-top: 1px solid var(--border);
+  }
+
+  footer span { color: var(--accent); }
+
+  /* ===== DESKTOP REFINEMENTS (stats + audience only — cards stay stacked) ===== */
+  @media (min-width: 640px) {
+    .stats-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-photo">
+        <img src="../assets/profile.webp" alt="Nick Straw" />
+      </div>
+      <span class="hero-eyebrow">UGC &amp; Brand Partnerships</span>
+      <h1>Nick Straw</h1>
+      <div class="hero-handle">@dr_nickyyy</div>
+      <p class="hero-niche">Doctor-turned-creator making ADHD, focus, and mental performance content that stops the scroll.</p>
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <section class="stats">
+    <div class="wrap">
+      <p class="stats-caption">Instagram Reach — Last 90 Days (15 Apr – 13 Jul)</p>
+      <div class="stats-grid">
+        <div>
+          <div class="stat-num">8.3M</div>
+          <div class="stat-label">Total Views</div>
+        </div>
+        <div>
+          <div class="stat-num">3.37M <small>↑21.9%</small></div>
+          <div class="stat-label">Accounts Reached</div>
+        </div>
+        <div>
+          <div class="stat-num">96.6%</div>
+          <div class="stat-label">Views From Non-Followers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AUDIENCE ===== -->
+  <section id="audience">
+    <div class="wrap">
+      <p class="section-label">Audience</p>
+      <h2 class="section-title">Who's Watching</h2>
+
+      <div class="audience-block">
+        <h3>Gender</h3>
+        <div class="bar-row">
+          <span class="bar-label">Women</span>
+          <div class="bar-track"><div class="bar-fill" style="width:64.4%;"></div></div>
+          <span class="bar-pct">64.4%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Men</span>
+          <div class="bar-track"><div class="bar-fill" style="width:35.6%;"></div></div>
+          <span class="bar-pct">35.6%</span>
+        </div>
+      </div>
+
+      <div class="audience-block">
+        <h3>Age</h3>
+        <div class="bar-row">
+          <span class="bar-label">25–34</span>
+          <div class="bar-track"><div class="bar-fill" style="width:31.9%;"></div></div>
+          <span class="bar-pct">31.9%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">25–44</span>
+          <div class="bar-track"><div class="bar-fill" style="width:61%;"></div></div>
+          <span class="bar-pct">61%</span>
+        </div>
+      </div>
+
+      <div class="audience-block">
+        <h3>Top Locations</h3>
+        <ul class="locations-list">
+          <li><span><span class="loc-rank">1</span>Taiwan</span> <span class="loc-pct">29.5%</span></li>
+          <li><span><span class="loc-rank">2</span>United States</span> <span class="loc-pct">20.8%</span></li>
+          <li><span><span class="loc-rank">3</span>Hong Kong</span> <span class="loc-pct">6.8%</span></li>
+          <li><span><span class="loc-rank">4</span>United Kingdom</span> <span class="loc-pct">6.5%</span></li>
+          <li><span><span class="loc-rank">5</span>Australia</span> <span class="loc-pct">4.9%</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section id="portfolio">
+    <div class="wrap">
+      <p class="section-label">Portfolio</p>
+      <h2 class="section-title">Recent Work</h2>
+
+      <div class="portfolio-cards">
+
+        <div class="card">
+          <video class="card-video" controls preload="metadata" playsinline>
+            <source src="../assets/CHATHUB%20English.mp4" type="video/mp4" />
+          </video>
+          <div class="card-body">
+            <div class="card-top">
+              <span class="card-brand">CHATHUB</span>
+              <span class="pill pill-en">EN</span>
+            </div>
+            <p class="card-desc">Sponsored integration woven into a casual, talking-head style video for an English-speaking audience.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <video class="card-video" controls preload="metadata" playsinline>
+            <source src="../assets/Kamee%20Chinese.mp4" type="video/mp4" />
+          </video>
+          <div class="card-body">
+            <div class="card-top">
+              <span class="card-brand">Kamee</span>
+              <span class="pill pill-zh">中文</span>
+            </div>
+            <p class="card-desc">Sponsored content delivered natively in Mandarin, reaching a Traditional Chinese-speaking audience directly.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <video class="card-video" controls preload="metadata" playsinline>
+            <source src="../assets/Medic%20English.mp4" type="video/mp4" />
+          </video>
+          <div class="card-body">
+            <div class="card-top">
+              <span class="card-brand">Medic Portal</span>
+              <span class="pill pill-en">EN</span>
+            </div>
+            <p class="card-desc">Native-style content showing how brand messaging blends naturally into my usual medical school &amp; study advice format.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BIO ===== -->
+  <section id="bio">
+    <div class="wrap">
+      <p class="section-label">About Nick</p>
+      <h2 class="section-title">A Bit About Me</h2>
+      <p>
+        I'm a UK-trained doctor (MBChB, Edinburgh) who left clinical medicine to build a life on my own terms — now I make content on ADHD, focus, and mental performance that resonates because it's lived, not scripted. That same authenticity is what makes brand integrations land: my audience trusts the voice, so the recommendation carries weight.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="wrap">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Let's Work Together</h2>
+      <a href="mailto:nick@drnickstraw.com" class="btn btn-primary">Email Me →</a>
+      <a href="https://instagram.com/dr_nickyyy" target="_blank" rel="noopener" class="contact-secondary">or DM @dr_nickyyy on Instagram</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 <span>Nick Straw</span>. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
