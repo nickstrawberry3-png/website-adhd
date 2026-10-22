@@ -48,6 +48,9 @@
   }
 
   [id] { scroll-margin-top: 1rem; }
+
+  /* Keeps text crisp where the moving background lines pass behind it */
+  main :is(h2, p, li) { text-shadow: 0 1px 14px rgba(5, 8, 13, 0.95), 0 0 2px rgba(5, 8, 13, 0.8); }
 }
 
 @layer components {

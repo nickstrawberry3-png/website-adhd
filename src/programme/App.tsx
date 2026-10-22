@@ -94,6 +94,15 @@ export default function App() {
         Skip to content
       </a>
 
+      {/* Moving lines behind the whole page; the hero video sits on top of them */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(90%_70%_at_30%_20%,#123a66,#05080d_70%)]"
+      >
+        <NeuroNoise maxPixelRatio={1} />
+        <div className="absolute inset-0 bg-ink/55" />
+      </div>
+
       <Hero />
 
       <main id="main" tabIndex={-1} className="outline-none">
@@ -134,18 +143,18 @@ export default function App() {
 
         {/* Quiz */}
         <section aria-labelledby="quiz-heading" className="px-5 pb-20 pt-4 sm:px-8 lg:pb-28">
-          <h2 id="quiz-heading" className={`${h2} mb-8 text-center`}>
-            What's blocking your focus?
-          </h2>
+          <div className="mx-auto mb-8 max-w-xl text-center">
+            <h2 id="quiz-heading" className={h2}>
+              What's blocking your focus?
+            </h2>
+            <p className={`${body} mt-4`}>7 quick questions. Find your focus type and one thing to try today.</p>
+          </div>
           <Quiz />
+          <p className="mt-5 text-center text-sm text-muted">This quiz is not a diagnosis.</p>
         </section>
 
         {/* The Solution: Neuro Noise background */}
-        <section className="relative isolate overflow-hidden bg-[radial-gradient(90%_70%_at_30%_20%,#123a66,#05080d_70%)] px-5 py-20 sm:px-8 lg:py-32">
-          <div className="absolute inset-0 -z-10">
-            <NeuroNoise />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,8,13,0.85),rgba(5,8,13,0.35)_30%,rgba(5,8,13,0.35)_70%,rgba(5,8,13,0.9))]" />
-          </div>
+        <section className="px-5 py-20 sm:px-8 lg:py-32">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-2xl">
               <Label>The Solution</Label>
@@ -204,7 +213,7 @@ export default function App() {
             <Label>In their words</Label>
             <div className="mt-4 grid gap-4 lg:grid-cols-3 lg:gap-5">
               {TESTIMONIALS.map((t) => (
-                <figure key={t.who} className="flex flex-col rounded-3xl border border-steel/30 bg-panel p-6 sm:p-7">
+                <figure key={t.who} className="glass-panel flex flex-col rounded-3xl border border-steel/30 p-6 sm:p-7">
                   <blockquote className="flex-1 space-y-3 text-[1.0625rem] leading-relaxed text-text/90">
                     {t.quotes.map((q) => (
                       <p key={q}>{q}</p>
@@ -231,7 +240,8 @@ export default function App() {
             <div>
               <h2 className={h2}>Who I am</h2>
               <p className={`${body} mt-6`}>
-                I'm Dr Nick Straw, a former UK doctor with ADHD. I know the Burnout Loop from the inside. I got through
+                I'm Dr Nick Straw, a former UK doctor with ADHD. I trained at Edinburgh Medical School and worked as a
+                doctor for 2 years. I know the Burnout Loop from the inside. I got through
                 six years of medical school by building systems around how my brain works without forcing it. And now I
                 help ADHD entrepreneurs break the loop, feel more confident in themselves and get stuff done.
               </p>
@@ -240,7 +250,7 @@ export default function App() {
         </section>
 
         {/* CTA */}
-        <section className="border-t border-steel/25 bg-panel px-5 py-20 text-center sm:px-8 lg:py-28">
+        <section className="px-5 py-20 text-center sm:px-8 lg:py-28">
           <div className="mx-auto max-w-2xl">
             <Label>Let's Talk</Label>
             <h2 className={h2}>Let's see what's keeping you stuck.</h2>

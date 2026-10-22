@@ -48,7 +48,10 @@ export default function Hero() {
         {bgPlaying ? <Pause className="size-4" aria-hidden="true" /> : <Play className="size-4" aria-hidden="true" />}
       </button>
       {/* Background video stays pinned while the hero content scrolls over it */}
-      <div className="absolute inset-0 -z-10" aria-hidden="true">
+      <div
+        className="absolute inset-0 -z-10 [mask-image:linear-gradient(to_bottom,#000_calc(100%-16rem),transparent)]"
+        aria-hidden="true"
+      >
         <div className="sticky top-0 h-svh overflow-hidden">
           <video
             ref={bgRef}
@@ -63,7 +66,6 @@ export default function Hero() {
           />
           <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_30%,rgba(5,8,13,0.45),rgba(5,8,13,0.82))]" />
         </div>
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-ink" />
       </div>
 
       <div className="mx-auto flex max-w-5xl flex-col items-center px-5 pb-16 pt-[max(3.5rem,env(safe-area-inset-top))] text-center sm:px-8 sm:pt-20 lg:pt-24">

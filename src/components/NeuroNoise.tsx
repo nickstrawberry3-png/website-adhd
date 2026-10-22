@@ -6,10 +6,11 @@ attribute vec2 a_pos;
 void main() { gl_Position = vec4(a_pos, 0.0, 1.0); }
 `
 
-// #000000, #4682B4, #1E90FF, #00BFFF
+// Low to high: #000000, #4682B4, #F0E68C, #1E90FF, #00BFFF
 const COLOURS = [
   [0, 0, 0],
   [0.275, 0.51, 0.706],
+  [0.941, 0.902, 0.549],
   [0.118, 0.565, 1],
   [0, 0.749, 1],
 ]
@@ -18,11 +19,15 @@ const COLOURS = [
 const TIME_SCALE = 0.3
 const BRIGHTNESS = -0.12
 const GRAIN = 0.06
+// Higher glow pushes more filaments up into the sky blue and khaki end of the palette.
+const GLOW = 1.1
 // Average frame time above this means the device is struggling: freeze on a still frame.
 const SLOW_FRAME_MS = 30
 const STILL_TIME = 14
 
-export default function NeuroNoise({ className = '' }: { className?: string }) {
+type Props = { className?: string; maxPixelRatio?: number }
+
+export default function NeuroNoise({ className = '', maxPixelRatio = 2 }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -65,7 +70,7 @@ export default function NeuroNoise({ className = '' }: { className?: string }) {
     const colours = new Float32Array(24)
     COLOURS.forEach((c, i) => colours.set(c, i * 3))
     gl.uniform3fv(u('u_colors'), colours)
-    gl.uniform4f(u('u_shape'), 1.26, 0.35, 0.28, 0.0)
+    gl.uniform4f(u('u_shape'), 1.26, 0.35, GLOW, 0.0)
     gl.uniform4f(u('u_surface'), 1.82, 1.0, BRIGHTNESS, 1.48)
     gl.uniform4f(u('u_finish'), 0.09, 0.0, 0.001, GRAIN)
     gl.uniform4f(u('u_transform'), 1.0, 0.0, 0.2, 0.0)
@@ -90,7 +95,7 @@ export default function NeuroNoise({ className = '' }: { className?: string }) {
     let presence = 0
 
     const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
+      const dpr = Math.min(window.devicePixelRatio || 1, maxPixelRatio)
       const w = Math.max(1, Math.round(canvas.clientWidth * dpr))
       const h = Math.max(1, Math.round(canvas.clientHeight * dpr))
       if (canvas.width !== w || canvas.height !== h) {
@@ -102,7 +107,7 @@ export default function NeuroNoise({ className = '' }: { className?: string }) {
 
     const draw = (t: number) => {
       resize()
-      gl.uniform4f(uScene, canvas.width, canvas.height, t * TIME_SCALE, 4.0)
+      gl.uniform4f(uScene, canvas.width, canvas.height, t * TIME_SCALE, COLOURS.length)
       gl.uniform4f(uSpace, 0, 0, pointerX, pointerY)
       gl.uniform4f(uCursor, presence, 3.0, 0.45, 0.46)
       gl.drawArrays(gl.TRIANGLES, 0, 3)
@@ -188,7 +193,7 @@ export default function NeuroNoise({ className = '' }: { className?: string }) {
       gl.deleteBuffer(buf)
       gl.deleteProgram(program)
     }
-  }, [])
+  }, [maxPixelRatio])
 
   return <canvas ref={canvasRef} aria-hidden="true" className={`block h-full w-full ${className}`} />
 }
