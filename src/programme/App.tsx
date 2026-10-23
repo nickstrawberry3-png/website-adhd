@@ -133,10 +133,10 @@ export default function App() {
         {/* Why it keeps happening */}
         <section className="px-5 py-20 sm:px-8 lg:py-28">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-[2.5rem] text-text sm:text-6xl lg:text-7xl">Trying harder isn't the fix.</h2>
+            <h2 className="text-[2.5rem] text-text sm:text-6xl lg:text-7xl">Trying harder will never work.</h2>
             <p className={`${body} mx-auto mt-6 max-w-2xl`}>
-              Most of us try to fix ADHD with apps, planners and timers. But a system fails when the person running it
-              has nothing left. That's why every new planner works for a week, then stops. So we fix energy first.
+              Most of us try to fix ADHD with apps, planners and timers. But you can't run a car without fuel, so we
+              boost energy first.
             </p>
           </div>
         </section>
@@ -147,7 +147,7 @@ export default function App() {
             <h2 id="quiz-heading" className={h2}>
               What's blocking your focus?
             </h2>
-            <p className={`${body} mt-4`}>7 quick questions. Find your focus type and one thing to try today.</p>
+            <p className={`${body} mt-4`}>7 quick questions to help you find your focus type and 1 thing to try today.</p>
           </div>
           <Quiz />
           <p className="mt-5 text-center text-sm text-muted">This quiz is not a diagnosis.</p>
