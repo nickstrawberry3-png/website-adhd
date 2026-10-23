@@ -84,7 +84,8 @@ export default function Hero() {
           fixes your energy first, then your systems, to break the cycle.
         </p>
         <p className="mt-3 max-w-[30rem] text-[0.9375rem] text-white/75">
-          By Dr Nick Straw, former UK doctor with ADHD, licensed doctor in Australia.
+          By Dr Nick Straw, MBChB, BMedSci (Edinburgh Medical School). Former UK doctor with ADHD, licensed doctor
+          in Australia.
         </p>
 
         <BookButton className="mt-8" />
