@@ -70,7 +70,7 @@ export default function Hero() {
 
       <div className="mx-auto flex max-w-5xl flex-col items-center px-5 pb-16 pt-[max(3.5rem,env(safe-area-inset-top))] text-center sm:px-8 sm:pt-20 lg:pt-24">
         <p className="liquid-glass rounded-full px-4 py-2 text-sm font-medium text-white/90">
-          12-Week Frictionless Focus Programme
+          12-Week Frictionless Focus Programme for ADHD Entrepreneurs
         </p>
 
         <h1 className="mt-6 text-[2.75rem] text-white [text-shadow:0_2px_24px_rgba(5,8,13,0.6)] sm:text-6xl lg:text-[5.25rem]">
@@ -78,6 +78,10 @@ export default function Hero() {
           <br />
           in 12 Weeks
         </h1>
+
+        <p className="mt-4 max-w-[30rem] text-lg font-medium text-white sm:text-xl">
+          I help ADHD entrepreneurs break the Burnout Loop.
+        </p>
 
         <p className="mt-5 max-w-[34rem] text-[1.0625rem] text-white/85 sm:text-lg">
           Work hard when there's a deadline → Crash → Waste the day → Feel guilty → Start over. Frictionless Focus
