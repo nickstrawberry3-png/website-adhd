@@ -9,7 +9,7 @@ const CALENDLY_URL =
 
 const PROBLEMS = [
   '"When there\'s a deadline, I get it all done. But the next day, I\'m depleted."',
-  '"I\'m white knuckling it through my days, forcing myself through every task."',
+  '"I can see a lot of opportunities in my business, but I don\'t know how to act on them."',
   '"The admin keeps piling up, and I keep putting it off."',
   '"I\'ve tried medication, apps, planners, timers and time blocking. Some helped for a while. Yet, none of it lasted."',
   '"I know I\'m smart and capable. But I\'m just tired of fighting myself to get things done."',
