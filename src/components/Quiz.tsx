@@ -177,7 +177,7 @@ export default function Quiz() {
           <p className="mt-4 text-[1.0625rem] text-text/90">{RESULTS[step.type].body}</p>
           <dl className="mt-6 grid gap-4">
             <div className="rounded-2xl border border-steel/40 bg-ink/40 p-4">
-              <dt className="text-sm font-semibold text-sky">Where it breaks</dt>
+              <dt className="text-sm font-semibold text-sky">The bottleneck</dt>
               <dd className="mt-1 font-serif text-xl text-text">{RESULTS[step.type].breaks}</dd>
             </div>
             <div className="rounded-2xl border border-khaki/35 bg-ink/40 p-4">
@@ -186,7 +186,7 @@ export default function Quiz() {
             </div>
           </dl>
           <p className="mt-6 text-center text-[1.0625rem] text-text/90">
-            On a free Focus Audit, I'll find exactly which stage is broken for you and give you a plan to fix it.
+            On a free Focus Audit, I'll find precisely which stage is broken for you and give you a plan to fix it.
           </p>
           <div className="mt-6 flex justify-center">
             <BookButton>Book your free Focus Audit</BookButton>
