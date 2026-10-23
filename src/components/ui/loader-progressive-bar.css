@@ -1,0 +1,39 @@
+.lpb-track {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  border-radius: 15px;
+  background: #0b1220;
+  box-shadow: inset -2px 2px 4px #010204;
+}
+
+.lpb-fill {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 20px;
+  min-width: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(to top, #1e90ff, #00bfff);
+  transition: width 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lpb-stripes {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.lpb-stripes span {
+  width: 10px;
+  height: 45px;
+  opacity: 0.3;
+  transform: rotate(45deg);
+  background: linear-gradient(to top right, #fff, transparent);
+}
