@@ -1,45 +1,6 @@
-// Navbar: transparent → solid on scroll
-const navbar = document.getElementById('navbar');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-}, { passive: true });
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
-
-// Fade-in sections on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.service-card, .about-text, .about-photo').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(24px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  observer.observe(el);
-});
-
-// ===== BILINGUAL TOGGLE =====
-const translations = {
+// Copied word for word from the old homepage (main.js). Some values contain <br> and <span> markup from the original;
+// lines() and plain() turn those into React-safe text.
+export const translations = {
   en: {
     'nav-about': 'About',
     'nav-services': 'Services',
@@ -140,31 +101,9 @@ const translations = {
   }
 };
 
-let currentLang = 'en';
+export type Lang = keyof typeof translations
+export type Key = keyof typeof translations.en
 
-function applyLanguage(lang) {
-  const t = translations[lang];
-
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) el.textContent = t[key];
-  });
-
-  document.querySelectorAll('[data-i18n-html]').forEach(el => {
-    const key = el.getAttribute('data-i18n-html');
-    if (t[key] !== undefined) el.innerHTML = t[key];
-  });
-
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const key = el.getAttribute('data-i18n-placeholder');
-    if (t[key] !== undefined) el.placeholder = t[key];
-  });
-
-  document.documentElement.lang = lang === 'zh' ? 'zh-TW' : 'en';
-  document.getElementById('langToggle').textContent = lang === 'zh' ? 'EN' : '中文';
-  currentLang = lang;
-}
-
-document.getElementById('langToggle').addEventListener('click', () => {
-  applyLanguage(currentLang === 'en' ? 'zh' : 'en');
-});
+/** Splits a value on <br> and strips the original <span> highlight tags. */
+export const lines = (s: string) => s.replace(/<\/?span>/g, '').split('<br>')
+export const plain = (s: string) => lines(s).join(' ')

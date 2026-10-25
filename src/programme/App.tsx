@@ -1,7 +1,7 @@
 import { useEffect, useRef, type ReactNode } from 'react'
 import Hero from '@/components/Hero'
 import Quiz from '@/components/Quiz'
-import NeuroNoise from '@/components/NeuroNoise'
+import PageBackground from '@/components/PageBackground'
 import BookButton from '@/components/BookButton'
 
 const CALENDLY_URL =
@@ -94,14 +94,7 @@ export default function App() {
         Skip to content
       </a>
 
-      {/* Moving lines behind the whole page; the hero video sits on top of them */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(90%_70%_at_30%_20%,#123a66,#05080d_70%)]"
-      >
-        <NeuroNoise maxPixelRatio={1} />
-        <div className="absolute inset-0 bg-ink/55" />
-      </div>
+      <PageBackground />
 
       <Hero />
 
