@@ -41,6 +41,13 @@
 
   p { text-wrap: pretty; }
 
+  /* The display serif has no Chinese characters, so Chinese headings use a clean sans instead */
+  :lang(zh-TW) :is(h1, h2, h3) {
+    font-family: var(--font-sans), "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+
   :focus-visible {
     outline: 3px solid var(--color-sky);
     outline-offset: 3px;
