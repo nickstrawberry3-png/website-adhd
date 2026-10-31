@@ -33,27 +33,43 @@ const STAGES = [
   },
 ]
 
+const MORE_RESULTS = [
+  {
+    heading: 'From not picking up the camera to booking shoots again in 3 weeks',
+    body: 'A photographer had almost stopped taking bookings, stopped posting her work, and said she would forget she even had the equipment. Within 3 weeks of starting the Fuel, Focus, Finish Method she reached out to past contacts, posted her work again, booked 2 shoots and had 4 more waiting on dates. She also put her website back online and cleared out her office, while helping her parents move house.',
+    // PLACEHOLDER: her quote goes here once she gives permission.
+  },
+  {
+    heading: 'From 5 years of putting off billing to starting the same week',
+    body: 'A retired engineer had been putting off billing for years of work on a family building, worth tens of thousands of dollars. On the first call we broke it into small steps and set clear rules for how to count her time, and she started billing the same week.',
+  },
+  {
+    heading: 'From failing a module to top marks',
+    body: 'A medical student was getting D grades and close to dropping out. She is now getting mostly As and Bs, and got the top mark in a module she had failed. In her words, she "stopped waiting to feel motivated."',
+  },
+]
+
 const TESTIMONIALS = [
   {
     quotes: [
       '"Before, I felt depressed and lost. I could see a lot of opportunities but didn\'t know how to execute them. Now I feel confident and capable. The programme helped me get my priorities straight and start small."',
       '"Just do it. Having someone keep reminding me and holding me accountable made all the difference."',
     ],
-    who: 'Nagila, nail salon owner',
+    who: 'Emma, nail salon owner',
   },
   {
     quotes: [
       '"When we first started working together I felt like I was always fighting with myself. I stopped waiting to feel motivated all the time and started understanding that showing up even on the difficult days is what really makes the difference."',
       '"I don\'t let one bad day convince me that I\'m failing. I feel happier, more at peace with myself, more consistent and much more confident."',
     ],
-    who: 'Joud, 12-week client',
+    who: 'Sarah, 12-week client',
   },
   {
     quotes: [
       '"Sleep in particular was something I used to overlook, but now I realize how much of an impact it has on ADHD. I feel a clear improvement after working with Nick."',
       '"It felt like a gentle form of accountability that pushed me to stay focused on solving my issues in daily life."',
     ],
-    who: 'Vic, engineer, Taiwan',
+    who: 'Eric, engineer, Taiwan',
   },
 ]
 
@@ -178,14 +194,19 @@ export default function App() {
         {/* Results */}
         <section className="px-5 py-20 sm:px-8 lg:py-28">
           <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[300px_1fr] lg:gap-16">
-            <img
-              src="/assets/nagila.jpg"
-              alt="Nagila, nail salon owner"
-              width={720}
-              height={696}
-              loading="lazy"
-              className="mx-auto h-auto w-full max-w-[300px] rounded-3xl lg:order-first"
-            />
+            <figure className="mx-auto w-full max-w-[300px] lg:order-first">
+              <img
+                src="/assets/client-nail-salon.jpg"
+                alt="Emma, nail salon owner"
+                width={720}
+                height={696}
+                loading="lazy"
+                className="h-auto w-full rounded-3xl"
+              />
+              <figcaption className="mt-3 text-center text-[0.9375rem] font-semibold text-khaki">
+                Emma, nail salon owner
+              </figcaption>
+            </figure>
             <div className="lg:order-last">
               <Label>Results</Label>
               <h2 className="text-[1.875rem] leading-[1.15] text-text sm:text-[2.5rem]">
@@ -197,6 +218,15 @@ export default function App() {
                 hired help, moved to a 9 to 6 schedule, and now works fewer hours while earning more.
               </p>
             </div>
+          </div>
+
+          <div className="mx-auto mt-14 grid max-w-5xl gap-12 lg:mt-20 lg:gap-16 lg:pl-[364px]">
+            {MORE_RESULTS.map((r) => (
+              <div key={r.heading}>
+                <h2 className="text-[1.875rem] leading-[1.15] text-text sm:text-[2.5rem]">{r.heading}</h2>
+                <p className={`${body} mt-6`}>{r.body}</p>
+              </div>
+            ))}
           </div>
         </section>
 
