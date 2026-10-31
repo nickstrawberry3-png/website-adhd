@@ -33,6 +33,23 @@ const STAGES = [
   },
 ]
 
+const MORE_RESULTS = [
+  {
+    heading: 'From not picking up the camera to booking shoots again in 3 weeks',
+    body: 'A photographer had almost stopped taking bookings, stopped posting her work, and said she would forget she even had the equipment. Within 3 weeks of starting the Fuel, Focus, Finish Method she reached out to past contacts, posted her work again, booked 2 shoots and had 4 more waiting on dates. She also put her website back online and cleared out her office, while helping her parents move house.',
+    // PLACEHOLDER: add her quote only once she gives permission:
+    // "I'm feeling far more in control than I was, that's for sure."
+  },
+  {
+    heading: 'From 5 years of putting off billing to starting the same week',
+    body: 'A retired engineer had been putting off billing for years of work on a family building, worth tens of thousands of dollars. On the first call we broke it into small steps and set clear rules for how to count her time, and she started billing the same week.',
+  },
+  {
+    heading: 'From failing a module to top marks',
+    body: 'A medical student was getting D grades and close to dropping out. She is now getting mostly As and Bs, and got the top mark in a module she had failed. In her words, she "stopped waiting to feel motivated."',
+  },
+]
+
 const TESTIMONIALS = [
   {
     quotes: [
@@ -197,6 +214,15 @@ export default function App() {
                 hired help, moved to a 9 to 6 schedule, and now works fewer hours while earning more.
               </p>
             </div>
+          </div>
+
+          <div className="mx-auto mt-14 grid max-w-5xl gap-12 lg:mt-20 lg:gap-16 lg:pl-[364px]">
+            {MORE_RESULTS.map((r) => (
+              <div key={r.heading}>
+                <h2 className="text-[1.875rem] leading-[1.15] text-text sm:text-[2.5rem]">{r.heading}</h2>
+                <p className={`${body} mt-6`}>{r.body}</p>
+              </div>
+            ))}
           </div>
         </section>
 
