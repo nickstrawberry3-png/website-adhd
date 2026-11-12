@@ -11,6 +11,49 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://drnickstraw.com/#nick",
+        "name": "Dr Nick Straw",
+        "honorificPrefix": "Dr",
+        "honorificSuffix": "MBChB, BMedSci",
+        "jobTitle": "ADHD Coach",
+        "description": "Former doctor in the UK and Australia, now an ADHD coach for entrepreneurs and professionals. Diagnosed with ADHD at 26.",
+        "url": "https://drnickstraw.com/",
+        "image": "https://drnickstraw.com/assets/profile.webp",
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Edinburgh", "sameAs": "https://www.ed.ac.uk/" },
+        "hasCredential": [
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "MBChB (Bachelor of Medicine, Bachelor of Surgery)", "recognizedBy": { "@type": "CollegeOrUniversity", "name": "University of Edinburgh" } },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "BMedSci (Bachelor of Medical Sciences)", "recognizedBy": { "@type": "CollegeOrUniversity", "name": "University of Edinburgh" } }
+        ],
+        "knowsAbout": ["ADHD", "Adult ADHD", "ADHD in entrepreneurs", "ADHD burnout", "Productivity with ADHD"],
+        "worksFor": { "@id": "https://drnickstraw.com/#org" },
+        "sameAs": ["https://www.instagram.com/dr_nickyyy/"]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://drnickstraw.com/#org",
+        "name": "Frictionless Focus",
+        "url": "https://drnickstraw.com/",
+        "logo": "https://drnickstraw.com/assets/profile.webp",
+        "founder": { "@id": "https://drnickstraw.com/#nick" },
+        "description": "12-week 1:1 coaching for ADHD entrepreneurs, built on the Fuel, Focus, Finish Method. Energy first. Systems second.",
+        "sameAs": ["https://www.instagram.com/dr_nickyyy/"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://drnickstraw.com/#site",
+        "url": "https://drnickstraw.com/",
+        "name": "Dr Nick Straw",
+        "publisher": { "@id": "https://drnickstraw.com/#org" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div id="root"></div>

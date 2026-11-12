@@ -1,9 +1,11 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { hydrateRoot } from 'react-dom/client'
 import '@/index.css'
 import App from './App'
 
-createRoot(document.getElementById('root')!).render(
+// The page text is already in the HTML (see scripts/prerender.mjs), so React attaches to it.
+hydrateRoot(
+  document.getElementById('root')!,
   <StrictMode>
     <App />
   </StrictMode>,

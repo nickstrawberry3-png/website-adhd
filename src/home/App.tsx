@@ -142,6 +142,23 @@ export default function App() {
                   </div>
                 ))}
               </dl>
+
+              <a
+                href="https://www.instagram.com/dr_nickyyy/"
+                target="_blank"
+                rel="noopener"
+                className="glass-panel mt-3 flex items-center gap-4 rounded-2xl border border-steel/35 p-4 transition-colors hover:border-dodger sm:mt-4 sm:p-5"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="size-10 shrink-0 text-gold" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
+                  <circle cx="12" cy="12" r="4.2" />
+                  <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
+                </svg>
+                <span>
+                  <span className="block font-serif text-2xl text-text">{t['ig-count']}</span>
+                  <span className="block text-[0.9375rem] text-sky">{t['ig-cta']} →</span>
+                </span>
+              </a>
             </div>
           </div>
         </section>
