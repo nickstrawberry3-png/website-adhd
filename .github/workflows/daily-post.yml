@@ -1,0 +1,23 @@
+name: Publish today's blog post
+
+# Rebuilds the site every morning at 07:05 Taipei time (23:05 UTC).
+# The build only includes posts whose publish_date is today or earlier,
+# so each run makes the next queued post go live.
+# To pause: GitHub > Actions > "Publish today's blog post" > ... > Disable workflow.
+
+on:
+  schedule:
+    - cron: '5 23 * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run the deploy workflow on main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --repo "$GITHUB_REPOSITORY" --ref main

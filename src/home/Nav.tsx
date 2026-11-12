@@ -44,6 +44,7 @@ export default function Nav({ lang, onToggleLang }: Props) {
     ['#about', t['nav-about']],
     ['#services', t['nav-services']],
     ['#contact', t['nav-contact']],
+    ['/blog/', t['nav-blog']],
   ] as const
 
   const langButton = (
