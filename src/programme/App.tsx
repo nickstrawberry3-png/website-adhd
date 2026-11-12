@@ -5,7 +5,7 @@ import PageBackground from '@/components/PageBackground'
 import BookButton from '@/components/BookButton'
 
 const CALENDLY_URL =
-  'https://calendly.com/drnickstraw/audit?hide_event_type_details=0&hide_gdpr_banner=1&background_color=0b1220&text_color=eef4fa&primary_color=1e90ff'
+  'https://calendly.com/drnickstraw/free-20-minute-focus-audit?hide_event_type_details=0&hide_gdpr_banner=1&background_color=0b1220&text_color=eef4fa&primary_color=1e90ff'
 
 const PROBLEMS = [
   '"When there\'s a deadline, I get it all done. But the next day, I\'m depleted."',

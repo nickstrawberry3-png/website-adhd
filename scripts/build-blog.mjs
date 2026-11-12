@@ -318,7 +318,7 @@ function renderLlms(posts) {
 
 - [Home](${SITE}/): who Dr Nick is
 - [Frictionless Focus, 12-week programme](${SITE}/12-week-programme/): how the programme works
-- [Book a free Focus Audit](https://calendly.com/drnickstraw/audit): the free first call
+- [Book a free Focus Audit](https://calendly.com/drnickstraw/free-20-minute-focus-audit): the free first call
 
 ## Blog
 
