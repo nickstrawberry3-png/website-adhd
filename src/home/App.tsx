@@ -266,7 +266,12 @@ export default function App() {
       </main>
 
       <footer className="px-5 py-8 text-center">
-        <p className="text-[0.8125rem] text-muted">{plain(t.footer)}</p>
+        <p className="text-[0.8125rem] text-muted">
+          <a href="https://www.instagram.com/dr_nickyyy/" target="_blank" rel="noopener me" className="hover:text-sky">
+            Dr Nick Straw (@dr_nickyyy)
+          </a>
+        </p>
+        <p className="mt-1 text-[0.8125rem] text-muted">{plain(t.footer)}</p>
       </footer>
     </>
   )

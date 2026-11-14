@@ -132,7 +132,7 @@ const head = ({ title, description, url, image, type = 'website', extra = '' }) 
 
 const foot = `
   <footer class="foot">
-    <p><a href="/">Dr Nick Straw</a> · <a href="/blog/">Blog</a> · <a href="https://www.instagram.com/dr_nickyyy/" rel="noopener">Instagram</a></p>
+    <p><a href="/">Dr Nick Straw</a> · <a href="/blog/">Blog</a> · <a href="https://www.instagram.com/dr_nickyyy/" rel="noopener me">Dr Nick Straw (@dr_nickyyy)</a></p>
     <p>General information, not medical advice. Speak to your own doctor about diagnosis, medication or your health.</p>
   </footer>
 </body>
