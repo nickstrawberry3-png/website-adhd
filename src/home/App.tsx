@@ -59,7 +59,7 @@ export default function App() {
         <div className="mx-auto grid w-full max-w-6xl flex-1 items-center px-5 pb-28 pt-28 sm:px-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             {/* Credentials card above the headline */}
-            <div className="liquid-glass mb-6 flex items-center gap-4 rounded-3xl p-3 pr-5 text-left lg:mb-8 lg:gap-5 lg:p-4 lg:pr-7">
+            <div className="mb-7 flex items-center gap-4 text-left [text-shadow:0_2px_16px_rgba(5,8,13,0.7)] lg:mb-9 lg:gap-5">
               <img src="/assets/profile.webp" alt="Dr Nick Straw" width="112" height="112" className="size-18 shrink-0 rounded-2xl object-cover object-top lg:size-28" />
               <div>
                 <p className="font-serif text-[1.75rem] leading-tight text-white lg:text-[2.75rem]">Dr Nick Straw</p>
