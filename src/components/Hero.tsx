@@ -1,3 +1,5 @@
+import { useRef, useState } from 'react'
+import { Play, Volume2, VolumeX } from 'lucide-react'
 import BookButton from '@/components/BookButton'
 
 const VSL_SRC = 'https://pub-233d270a885f4fc3831fa6f418a2d596.r2.dev/VSL.mov'
@@ -8,6 +10,65 @@ const TRUST = [
   ['1:1', 'Private Coaching'],
   ['1×', 'Weekly Check-in'],
 ] as const
+
+/** VSL with no timeline or time shown: big play button, tap to pause, sound toggle. */
+function VslPlayer() {
+  const ref = useRef<HTMLVideoElement>(null)
+  const [playing, setPlaying] = useState(false)
+  const [muted, setMuted] = useState(false)
+
+  const toggle = () => {
+    const v = ref.current!
+    if (v.paused) v.play().catch(() => {})
+    else v.pause()
+  }
+
+  const toggleSound = () => {
+    const v = ref.current!
+    v.muted = !v.muted
+    setMuted(v.muted)
+  }
+
+  return (
+    <>
+      <video
+        ref={ref}
+        className="absolute inset-0 h-full w-full cursor-pointer object-cover"
+        src={VSL_SRC}
+        poster={VSL_POSTER}
+        playsInline
+        preload="metadata"
+        onClick={toggle}
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onEnded={() => setPlaying(false)}
+        aria-label="How to Get Unstuck, video by Dr Nick Straw"
+      />
+      {!playing && (
+        <button
+          type="button"
+          onClick={toggle}
+          aria-label="Play video"
+          className="absolute inset-0 flex items-end justify-center bg-black/20 pb-[30%] transition-colors hover:bg-black/10"
+        >
+          <span className="flex size-24 items-center justify-center rounded-full bg-gold text-ink shadow-[0_10px_50px_-6px_rgba(255,215,0,0.7)] transition-transform hover:scale-105 sm:size-28">
+            <Play className="ml-1.5 size-11 fill-current sm:size-12" aria-hidden="true" />
+          </span>
+        </button>
+      )}
+      {playing && (
+        <button
+          type="button"
+          onClick={toggleSound}
+          aria-label={muted ? 'Turn sound on' : 'Turn sound off'}
+          className="absolute bottom-4 right-4 flex size-11 items-center justify-center rounded-full bg-black/55 text-white backdrop-blur hover:bg-black/70"
+        >
+          {muted ? <VolumeX className="size-5" aria-hidden="true" /> : <Volume2 className="size-5" aria-hidden="true" />}
+        </button>
+      )}
+    </>
+  )
+}
 
 export default function Hero() {
   return (
@@ -49,15 +110,7 @@ export default function Hero() {
 
         <div className="liquid-glass mx-auto w-full max-w-[360px] rounded-[30px] p-2 shadow-[0_0_120px_-20px_rgba(30,144,255,0.45)] sm:max-w-[380px] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:max-w-[400px]">
           <div className="relative aspect-[9/16] overflow-hidden rounded-[24px] bg-black">
-            <video
-              className="absolute inset-0 h-full w-full object-cover"
-              src={VSL_SRC}
-              poster={VSL_POSTER}
-              controls
-              playsInline
-              preload="metadata"
-              aria-label="How to Get Unstuck, video by Dr Nick Straw"
-            />
+            <VslPlayer />
           </div>
         </div>
 
