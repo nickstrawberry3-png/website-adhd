@@ -1,5 +1,4 @@
 import BookButton from '@/components/BookButton'
-import BrainBackdrop from '@/components/BrainBackdrop'
 
 const VSL_SRC = 'https://pub-233d270a885f4fc3831fa6f418a2d596.r2.dev/VSL.mov'
 const VSL_POSTER = 'https://pub-233d270a885f4fc3831fa6f418a2d596.r2.dev/WhatsApp%20Image%202026-06-03%20at%2021.33.19.jpeg'
@@ -13,7 +12,6 @@ const TRUST = [
 export default function Hero() {
   return (
     <header className="relative isolate">
-      <BrainBackdrop side />
 
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-[max(3.5rem,env(safe-area-inset-top))] sm:px-8 sm:pt-20 lg:grid-cols-[1.2fr_0.8fr] lg:gap-x-16 lg:gap-y-10 lg:pt-24">
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -49,7 +47,7 @@ export default function Hero() {
 
         </div>
 
-        <div className="liquid-glass mx-auto w-full max-w-[360px] rounded-[30px] p-2 sm:max-w-[380px] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:max-w-[400px]">
+        <div className="liquid-glass mx-auto w-full max-w-[360px] rounded-[30px] p-2 shadow-[0_0_120px_-20px_rgba(30,144,255,0.45)] sm:max-w-[380px] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:max-w-[400px]">
           <div className="relative aspect-[9/16] overflow-hidden rounded-[24px] bg-black">
             <video
               className="absolute inset-0 h-full w-full object-cover"
