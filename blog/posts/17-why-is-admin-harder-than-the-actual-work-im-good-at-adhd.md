@@ -8,7 +8,7 @@ summary: "Because the work you are good at has interest, variety and usually som
 publish_date: 2026-12-03
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
 cta: focus-audit
-image: p22.webp
+image: p11.webp
 ---
 # Why is admin harder than the actual work I'm good at?
 

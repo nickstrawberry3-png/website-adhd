@@ -8,7 +8,7 @@ summary: "Yes, in cause and in pattern. Normal burnout usually comes from sustai
 publish_date: 2026-11-14
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
 cta: focus-audit
-image: p22.webp
+image: p11.webp
 ---
 # Is ADHD burnout different from normal burnout?
 
