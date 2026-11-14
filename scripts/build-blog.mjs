@@ -34,7 +34,7 @@ const PERSON = {
   honorificSuffix: 'MBChB, BMedSci',
   jobTitle: 'ADHD Coach',
   description:
-    'Former doctor in the UK and Australia, now an ADHD coach. Runs Frictionless Focus, a 12-week programme for entrepreneurs and professionals with ADHD.',
+    'Former doctor in the UK and Australia, now an ADHD coach. Runs Frictionless Focus, a 12-week programme for business owners and professionals with ADHD.',
   url: `${SITE}/`,
   image: `${SITE}/assets/profile.webp`,
   alumniOf: { '@type': 'CollegeOrUniversity', name: 'University of Edinburgh' },
@@ -127,7 +127,7 @@ const head = ({ title, description, url, image, type = 'website', extra = '' }) 
 <body>
   <header class="nav">
     <a class="brand" href="/">Dr Nick</a>
-    <nav><a href="/#about">About</a><a href="/blog/">Blog</a></nav>
+    <nav><a href="/#about">About</a><a href="/blog/">Blog</a><a href="https://www.instagram.com/dr_nickyyy/" rel="noopener me">Instagram 73K+</a></nav>
   </header>`
 
 const foot = `
@@ -144,8 +144,8 @@ const AUTHOR_BOX = `
       <img src="/assets/profile.webp" alt="Dr Nick Straw" width="72" height="72" loading="lazy" />
       <div>
         <p class="author-name">Dr Nick Straw, MBChB, BMedSci, University of Edinburgh</p>
-        <p>He worked as a doctor in the UK and Australia before moving into ADHD coaching, and now runs Frictionless Focus, a 12-week programme for entrepreneurs and professionals with ADHD.</p>
-        <p><a href="/#about">More about Dr Nick</a> · <a href="https://www.instagram.com/dr_nickyyy/" rel="noopener">74K+ on Instagram</a></p>
+        <p>He worked as a doctor in the UK and Australia before moving into ADHD coaching, and now runs Frictionless Focus, a 12-week programme for business owners and professionals with ADHD.</p>
+        <p><a href="/#about">More about Dr Nick</a> · <a href="https://www.instagram.com/dr_nickyyy/" rel="noopener">73K+ on Instagram</a></p>
       </div>
     </aside>`
 
@@ -241,7 +241,7 @@ function renderIndex(posts) {
     '@type': 'Blog',
     '@id': `${SITE}/blog/#blog`,
     name: 'Dr Nick Straw blog',
-    description: 'Straight answers to the questions ADHD entrepreneurs, professionals and freelancers ask, from a former doctor turned ADHD coach.',
+    description: 'Straight answers to the questions ADHD business owners, professionals and freelancers ask, from a former doctor turned ADHD coach.',
     url,
     author: PERSON,
     publisher: ORG,
@@ -256,7 +256,7 @@ function renderIndex(posts) {
     head({
       title: 'ADHD at work: questions answered | Dr Nick Straw',
       description:
-        'Straight answers to the questions ADHD entrepreneurs, professionals and freelancers ask, from Dr Nick Straw, MBChB, BMedSci, former doctor and ADHD coach.',
+        'Straight answers to the questions ADHD business owners, professionals and freelancers ask, from Dr Nick Straw, MBChB, BMedSci, former doctor and ADHD coach.',
       url,
       image: `${SITE}/assets/profile.webp`,
       extra: ld(schema),
@@ -264,7 +264,7 @@ function renderIndex(posts) {
     `
   <main class="index">
     <h1>ADHD at work, answered</h1>
-    <p class="lede">Straight answers to the questions ADHD entrepreneurs, professionals and freelancers ask. Written by Dr Nick Straw, MBChB, BMedSci (University of Edinburgh). Former doctor, now ADHD coach.</p>
+    <p class="lede">Straight answers to the questions ADHD business owners, professionals and freelancers ask. Written by Dr Nick Straw, MBChB, BMedSci (University of Edinburgh). Former doctor, now ADHD coach.</p>
     <ul class="list">
 ${posts
   .map(
@@ -301,7 +301,7 @@ function renderFeed(posts) {
 <channel>
   <title>Dr Nick Straw blog</title>
   <link>${SITE}/blog/</link>
-  <description>Straight answers to the questions ADHD entrepreneurs and professionals ask.</description>
+  <description>Straight answers to the questions ADHD business owners and professionals ask.</description>
   <language>en</language>
 ${items}
 </channel>
@@ -312,7 +312,7 @@ ${items}
 function renderLlms(posts) {
   return `# Dr Nick Straw
 
-> Dr Nick Straw, MBChB, BMedSci (University of Edinburgh), is a former doctor in the UK and Australia who now coaches ADHD entrepreneurs and professionals. He runs Frictionless Focus, a 12-week 1:1 programme built on the Fuel, Focus, Finish Method. Energy first. Systems second.
+> Dr Nick Straw, MBChB, BMedSci (University of Edinburgh), is a former doctor in the UK and Australia who now coaches ADHD business owners and professionals. He runs Frictionless Focus, a 12-week 1:1 programme built on the Fuel, Focus, Finish Method. Energy first. Systems second.
 
 ## Key pages
 

@@ -266,7 +266,7 @@ export default function App() {
                 I'm Dr Nick Straw, a former UK doctor with ADHD. I trained at Edinburgh Medical School and worked as a
                 doctor for 2 years. I know the Burnout Loop from the inside. I got through
                 six years of medical school by building systems around how my brain works without forcing it. And now I
-                help ADHD entrepreneurs break the loop, feel more confident in themselves and get stuff done.
+                help ADHD business owners break the loop, feel more confident in themselves and get stuff done.
               </p>
             </div>
           </div>

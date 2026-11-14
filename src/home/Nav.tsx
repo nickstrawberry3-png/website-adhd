@@ -59,6 +59,23 @@ export default function Nav({ lang, onToggleLang }: Props) {
     </button>
   )
 
+  const igLink = (
+    <a
+      href="https://www.instagram.com/dr_nickyyy/"
+      target="_blank"
+      rel="noopener me"
+      aria-label="Dr Nick on Instagram, 73K+ followers"
+      className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-white/35 px-3 text-sm font-semibold text-white transition-colors hover:border-white/70 hover:bg-white/10"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true" className="size-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
+        <circle cx="12" cy="12" r="4.2" />
+        <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
+      </svg>
+      73K+
+    </a>
+  )
+
   return (
     <>
       <nav className="fixed inset-x-0 top-0 z-40 px-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:px-6">
@@ -87,10 +104,12 @@ export default function Nav({ lang, onToggleLang }: Props) {
             >
               {APPLY}
             </a>
+            <span className="ml-2">{igLink}</span>
             <span className="ml-2">{langButton}</span>
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
+            {igLink}
             {langButton}
             <button
               ref={buttonRef}
