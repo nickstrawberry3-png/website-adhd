@@ -49,7 +49,7 @@ function VslPlayer() {
           type="button"
           onClick={toggle}
           aria-label="Play video"
-          className="absolute inset-0 flex items-end justify-center bg-black/20 pb-[30%] transition-colors hover:bg-black/10"
+          className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors hover:bg-black/10"
         >
           <span className="flex size-24 items-center justify-center rounded-full bg-gold text-ink shadow-[0_10px_50px_-6px_rgba(255,215,0,0.7)] transition-transform hover:scale-105 sm:size-28">
             <Play className="ml-1.5 size-11 fill-current sm:size-12" aria-hidden="true" />
