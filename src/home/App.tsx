@@ -60,7 +60,7 @@ export default function App() {
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             {/* Credentials card above the headline */}
             <div className="mb-7 flex items-center gap-4 text-left [text-shadow:0_2px_16px_rgba(5,8,13,0.7)] lg:mb-9 lg:gap-5">
-              <img src="/assets/profile.webp" alt="Dr Nick Straw" width="112" height="112" className="size-18 shrink-0 rounded-2xl object-cover object-top lg:size-28" />
+              <img src="/assets/profile-square.jpg" alt="Dr Nick Straw" width="112" height="112" className="size-18 shrink-0 rounded-2xl object-cover lg:size-28" />
               <div>
                 <p className="font-serif text-[1.75rem] leading-tight text-white lg:text-[2.75rem]">Dr Nick Straw</p>
                 <p className="text-sm font-semibold text-gold lg:mt-1 lg:text-lg">{t['cred-degrees']}</p>
