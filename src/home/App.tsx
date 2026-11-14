@@ -54,35 +54,48 @@ export default function App() {
       <Nav lang={lang} onToggleLang={() => setLang((l) => (l === 'en' ? 'zh' : 'en'))} />
 
       <header id="home" className="relative isolate flex min-h-svh flex-col">
-        <BrainBackdrop pauseButtonClassName="bottom-6 right-4 sm:right-6" />
+        <BrainBackdrop side pauseButtonClassName="bottom-6 right-4 sm:right-6" />
 
-        <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-5 pb-28 pt-28 text-center sm:px-8">
-          <p className="liquid-glass rounded-full px-4 py-2 text-sm font-medium text-white/90">{t['hero-eyebrow']}</p>
+        <div className="mx-auto grid w-full max-w-6xl flex-1 items-center px-5 pb-28 pt-28 sm:px-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+            {/* Credentials card above the headline */}
+            <div className="liquid-glass mb-6 flex items-center gap-4 rounded-3xl p-3 pr-5 text-left lg:mb-8 lg:gap-5 lg:p-4 lg:pr-7">
+              <img src="/assets/profile.webp" alt="Dr Nick Straw" width="112" height="112" className="size-18 shrink-0 rounded-2xl object-cover object-top lg:size-28" />
+              <div>
+                <p className="font-serif text-[1.75rem] leading-tight text-white lg:text-[2.75rem]">Dr Nick Straw</p>
+                <p className="text-sm font-semibold text-gold lg:mt-1 lg:text-lg">{t['cred-degrees']}</p>
+                <p className="text-sm text-white/80 lg:text-[1.0625rem]">{t['cred-line']}</p>
+              </div>
+            </div>
 
-          <h1 className="mt-6 text-[2.75rem] text-white [text-shadow:0_2px_24px_rgba(5,8,13,0.6)] sm:text-6xl lg:text-[5.25rem]">
-            {lines(t['hero-h1']).map((line, i) => (
-              <span key={i} className="block">
-                {line}
-              </span>
-            ))}
-          </h1>
+            <p className="liquid-glass rounded-full px-4 py-2 text-sm font-medium text-white/90">{t['hero-eyebrow']}</p>
 
-          <p className="mt-6 max-w-[36rem] text-[1.0625rem] text-white/85 sm:text-lg">{t['hero-sub']}</p>
+            <h1 className="mt-6 text-[2.75rem] text-white [text-shadow:0_2px_24px_rgba(5,8,13,0.6)] sm:text-6xl lg:text-[4.75rem]">
+              {lines(t['hero-h1']).map((line, i) => (
+                <span key={i} className="block">
+                  {line}
+                </span>
+              ))}
+            </h1>
 
-          <div className="mt-9 flex w-full max-w-md flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row">
-            <a
-              href="/12-week-programme/"
-              className="inline-flex min-h-14 items-center justify-center rounded-full bg-gold px-9 text-[1.0625rem] font-bold text-ink shadow-[0_10px_40px_-12px_rgba(255,215,0,0.55)] transition-transform hover:-translate-y-0.5"
-            >
-              {t['hero-cta1']}
-            </a>
-            <a
-              href="#about"
-              className="liquid-glass inline-flex min-h-14 items-center justify-center rounded-full px-9 text-[1.0625rem] font-semibold text-white transition-colors hover:bg-white/10"
-            >
-              {t['hero-cta2']}
-            </a>
+            <p className="mt-6 max-w-[36rem] text-[1.0625rem] text-white/85 sm:text-lg">{t['hero-sub']}</p>
+
+            <div className="mt-9 flex w-full max-w-md flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row">
+              <a
+                href="/12-week-programme/"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-gold px-9 text-[1.0625rem] font-bold text-ink shadow-[0_10px_40px_-12px_rgba(255,215,0,0.55)] transition-transform hover:-translate-y-0.5"
+              >
+                {t['hero-cta1']}
+              </a>
+              <a
+                href="#about"
+                className="liquid-glass inline-flex min-h-14 items-center justify-center rounded-full px-9 text-[1.0625rem] font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                {t['hero-cta2']}
+              </a>
+            </div>
           </div>
+
         </div>
 
         <div className="pointer-events-none absolute inset-x-0 bottom-6 flex flex-col items-center gap-1 text-white/70" aria-hidden="true">

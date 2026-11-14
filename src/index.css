@@ -21,6 +21,14 @@
     -webkit-text-size-adjust: 100%;
   }
 
+  /* Big screens: scale the whole site up so it doesn't look tiny */
+  @media (min-width: 1536px) {
+    html { font-size: 112.5%; }
+  }
+  @media (min-width: 1920px) {
+    html { font-size: 125%; }
+  }
+
   body {
     background: var(--color-ink);
     color: var(--color-text);
