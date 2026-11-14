@@ -102,4 +102,4 @@ Some people reduce it over time. Many keep some form of it permanently, which is
 
 Book a free Focus Audit. We will work out what kind of structure would actually fit your week.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=do-i-need-more-discipline-or-do-i-need-accountability-adhd)

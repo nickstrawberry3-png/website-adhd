@@ -4,11 +4,15 @@
   <meta charset="UTF-8" />
   <title>Book a Focus Audit | Dr Nick Straw</title>
   <meta name="robots" content="noindex" />
-  <meta http-equiv="refresh" content="0; url=https://calendly.com/drnickstraw/free-20-minute-focus-audit" />
   <link rel="canonical" href="https://calendly.com/drnickstraw/free-20-minute-focus-audit" />
+  <script>
+    // Pass any tracking tags (utm_source etc.) through to Calendly so bookings show where they came from.
+    window.location.replace("https://calendly.com/drnickstraw/free-20-minute-focus-audit" + window.location.search);
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=https://calendly.com/drnickstraw/free-20-minute-focus-audit" /></noscript>
 </head>
 <body>
-  <script>window.location.replace("https://calendly.com/drnickstraw/free-20-minute-focus-audit");</script>
-  <p>Taking you to the booking page. <a href="https://calendly.com/drnickstraw/free-20-minute-focus-audit">Book a Focus Audit</a>.</p>
+  <p>Taking you to the booking page. <a id="book" href="https://calendly.com/drnickstraw/free-20-minute-focus-audit">Book a Focus Audit</a>.</p>
+  <script>document.getElementById("book").href += window.location.search;</script>
 </body>
 </html>

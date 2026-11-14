@@ -87,4 +87,4 @@ Still write it down. Switching between two real tasks costs the same as switchin
 
 Book a free Focus Audit. We will look at where your blocks are breaking and set them up so they hold.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=why-do-i-get-a-random-urge-to-do-something-else-halfway-through-a-task-adhd)

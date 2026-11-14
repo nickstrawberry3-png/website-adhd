@@ -95,4 +95,4 @@ It works for the first action of a big project. The rest of the project needs a 
 
 Book a free Focus Audit. We will find your Step Zero on the task that matters most.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=why-cant-i-start-a-task-i-actually-want-to-do-adhd)

@@ -97,4 +97,4 @@ A fixed weekly slot in your sharpest hours, and one person who asks you whether 
 
 Book a free Focus Audit. We will find why the invoices keep slipping and make a plan to get them sent.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=how-do-i-make-myself-send-the-invoices-ive-been-sitting-on-adhd)

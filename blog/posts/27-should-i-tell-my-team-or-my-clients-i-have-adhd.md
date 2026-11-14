@@ -96,4 +96,4 @@ It explains the mechanism. It does not change the expectations, and people often
 
 Book a free Focus Audit. We will look at what is actually going wrong and what would change it.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=should-i-tell-my-team-or-my-clients-i-have-adhd)

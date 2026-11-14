@@ -90,4 +90,4 @@ It works short term and it costs you your best hours. Better to use external str
 
 Book a free Focus Audit. We will find where your mornings are going and set the first task so you actually start.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=why-cant-i-start-work-in-the-morning-even-when-my-day-is-empty-adhd)

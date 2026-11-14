@@ -92,4 +92,4 @@ On repetitive work, often. Changing where and how you do something is a small in
 
 Book a free Focus Audit. We will find which trigger works on the task you keep avoiding.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=why-can-i-only-work-when-theres-a-deadline-adhd)

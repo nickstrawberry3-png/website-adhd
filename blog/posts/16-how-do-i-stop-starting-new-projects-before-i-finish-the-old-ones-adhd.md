@@ -84,4 +84,4 @@ Pick one, finish it, kill the rest in writing. Do not try to rescue them all. Th
 
 Book a free Focus Audit. We will work out which one to finish and what finishing it means.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=how-do-i-stop-starting-new-projects-before-i-finish-the-old-ones-adhd)

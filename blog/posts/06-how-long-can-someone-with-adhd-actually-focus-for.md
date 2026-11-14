@@ -94,4 +94,4 @@ No. Long absorbed focus on interesting things is common with ADHD, and it is the
 
 Book a free Focus Audit. We will find your real Drift Point and build the day around it.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=how-long-can-someone-with-adhd-actually-focus-for)

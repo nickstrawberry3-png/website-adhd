@@ -93,4 +93,4 @@ Then the person is missing. A slot with nobody checking is a plan, and plans are
 
 Book a free Focus Audit. We will set up the slot and the trigger that makes it happen.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=why-is-admin-harder-than-the-actual-work-im-good-at-adhd)

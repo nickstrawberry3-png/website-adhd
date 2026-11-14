@@ -157,7 +157,11 @@ function renderPost(p, live) {
     .replace(/<table>/g, '<div class="table"><table>')
     .replace(/<\/table>/g, '</table></div>')
   const next = p.readNext.filter((r) => live.has(r.slug))
-  const cta = marked.parse(p.cta).replace(/href="\/focus-audit"/, `class="button" href="${BOOK}"`)
+  // Book button keeps the post's UTM tags. A post pasted without them gets them added, so every booking is traceable.
+  const tagged = `${BOOK}?utm_source=blog&amp;utm_medium=website&amp;utm_campaign=focus_audit&amp;utm_content=${p.slug}`
+  const cta = marked
+    .parse(p.cta)
+    .replace(/href="\/focus-audit\/?([^"]*)"/, (_, q) => `class="button" href="${q.includes("utm_") ? BOOK + q : tagged}"`)
 
   const schema = {
     '@context': 'https://schema.org',

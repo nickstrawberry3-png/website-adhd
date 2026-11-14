@@ -88,4 +88,4 @@ If it regularly takes more than a few days, the cycle is costing more than the w
 
 Book a free Focus Audit. We will find where the energy is going and build pressure that does not cost you the following week.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=why-do-i-crash-for-days-after-hitting-a-big-deadline-adhd)

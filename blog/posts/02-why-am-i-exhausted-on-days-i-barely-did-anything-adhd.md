@@ -87,4 +87,4 @@ Medication helps many people start, which removes part of the drain. Most people
 
 Book a free Focus Audit. We will find which part of your energy is empty and what to fix first.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=why-am-i-exhausted-on-days-i-barely-did-anything-adhd)

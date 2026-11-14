@@ -95,4 +95,4 @@ Sometimes briefly. If the method has not changed, the pattern usually reappears 
 
 Book a free Focus Audit. We will find which part of the loop to break first.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=is-adhd-burnout-different-from-normal-burnout)

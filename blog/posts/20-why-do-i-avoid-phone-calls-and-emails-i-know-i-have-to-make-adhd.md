@@ -95,4 +95,4 @@ A fixed slot and a person who asks. Notifications and reminders have already bee
 
 Book a free Focus Audit. We will set the slot and the template that gets the backlog cleared.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=why-do-i-avoid-phone-calls-and-emails-i-know-i-have-to-make-adhd)

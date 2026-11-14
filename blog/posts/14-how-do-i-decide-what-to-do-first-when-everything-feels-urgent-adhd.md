@@ -90,4 +90,4 @@ Only if it happens most days. Then the list is wrong, which is what the weekly r
 
 Book a free Focus Audit. We will set your three and work out what gets a slot instead of your attention.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=how-do-i-decide-what-to-do-first-when-everything-feels-urgent-adhd)

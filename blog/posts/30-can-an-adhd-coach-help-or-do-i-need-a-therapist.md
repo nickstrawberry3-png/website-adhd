@@ -106,4 +106,4 @@ Worth asking what was missing. Most of the time it is accountability between ses
 
 Book a free Focus Audit. It is a free call, we will find what is actually blocking you, and if coaching is not the right thing we will tell you.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=can-an-adhd-coach-help-or-do-i-need-a-therapist)

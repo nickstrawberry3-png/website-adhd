@@ -85,4 +85,4 @@ With people close to you, often helpful. In a workplace, depends entirely on the
 
 Book a free Focus Audit. We will look at what it is costing you and what to put in place.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=why-does-one-piece-of-criticism-wreck-my-whole-day-adhd)

@@ -101,4 +101,4 @@ Then your energy is the business asset, and protecting it is not self-indulgence
 
 Book a free Focus Audit. We will find where your energy is going and what to protect first.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=how-do-i-run-a-business-with-adhd-without-burning-out)

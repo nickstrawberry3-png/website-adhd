@@ -86,4 +86,4 @@ Start at your Drift Point, which is the honest number of minutes before your att
 
 Book a free Focus Audit. We will set up your work blocks so the phone stops deciding your day.
 
-[Book a Focus Audit](/focus-audit)
+[Book a Focus Audit](/focus-audit/?utm_source=blog&utm_medium=website&utm_campaign=focus_audit&utm_content=how-do-i-stop-picking-up-my-phone-every-time-i-sit-down-to-work-adhd)
