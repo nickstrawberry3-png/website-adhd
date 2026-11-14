@@ -13,35 +13,43 @@ const TRUST = [
 export default function Hero() {
   return (
     <header className="relative isolate">
-      <BrainBackdrop />
+      <BrainBackdrop side />
 
-      <div className="mx-auto flex max-w-5xl flex-col items-center px-5 pb-16 pt-[max(3.5rem,env(safe-area-inset-top))] text-center sm:px-8 sm:pt-20 lg:pt-24">
-        <p className="liquid-glass rounded-full px-4 py-2 text-sm font-medium text-white/90">
-          12-Week Frictionless Focus Programme for ADHD Business Owners
-        </p>
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-[max(3.5rem,env(safe-area-inset-top))] sm:px-8 sm:pt-20 lg:grid-cols-[1.2fr_0.8fr] lg:gap-x-16 lg:gap-y-10 lg:pt-24">
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div className="mb-7 flex items-center gap-4 text-left [text-shadow:0_2px_16px_rgba(5,8,13,0.7)] lg:gap-5">
+            <img src="/assets/profile-square.jpg" alt="Dr Nick Straw" width="112" height="112" className="size-18 shrink-0 rounded-2xl object-cover lg:size-24" />
+            <div>
+              <p className="font-serif text-[1.75rem] leading-tight text-white lg:text-[2.5rem]">Dr Nick Straw</p>
+              <p className="text-sm font-semibold text-gold lg:mt-1 lg:text-lg">MBChB, BMedSci · Edinburgh Medical School</p>
+              <p className="text-sm text-white/80 lg:text-[1.0625rem]">Former UK doctor with ADHD, licensed doctor in Australia.</p>
+            </div>
+          </div>
 
-        <h1 className="mt-6 text-[2.75rem] text-white [text-shadow:0_2px_24px_rgba(5,8,13,0.6)] sm:text-6xl lg:text-[5.25rem]">
-          Break the Burnout Loop
-          <br />
-          in 12 Weeks
-        </h1>
+          <p className="liquid-glass rounded-full px-4 py-2 text-sm font-medium text-white/90">
+            12-Week Frictionless Focus Programme for ADHD Business Owners
+          </p>
 
-        <p className="mt-4 max-w-[30rem] text-lg font-medium text-white sm:text-xl">
-          I help ADHD business owners break the Burnout Loop.
-        </p>
+          <h1 className="mt-6 text-[2.75rem] text-white [text-shadow:0_2px_24px_rgba(5,8,13,0.6)] sm:text-6xl lg:text-[4.25rem]">
+            Break the Burnout Loop
+            <br />
+            in 12 Weeks
+          </h1>
 
-        <p className="mt-5 max-w-[34rem] text-[1.0625rem] text-white/85 sm:text-lg">
-          Work hard when there's a deadline → Crash → Waste the day → Feel guilty → Start over. Frictionless Focus
-          fixes your energy first, then your systems, to break the cycle.
-        </p>
-        <p className="mt-3 max-w-[30rem] text-[0.9375rem] text-white/75">
-          By Dr Nick Straw, MBChB, BMedSci (Edinburgh Medical School). Former UK doctor with ADHD, licensed doctor
-          in Australia.
-        </p>
+          <p className="mt-4 max-w-[30rem] text-lg font-medium text-white sm:text-xl">
+            I help ADHD business owners break the Burnout Loop.
+          </p>
 
-        <BookButton className="mt-8" />
+          <p className="mt-5 max-w-[34rem] text-[1.0625rem] text-white/85 sm:text-lg">
+            Work hard when there's a deadline → Crash → Waste the day → Feel guilty → Start over. Frictionless Focus
+            fixes your energy first, then your systems, to break the cycle.
+          </p>
 
-        <div className="liquid-glass mt-10 w-full max-w-[360px] rounded-[30px] p-2 sm:max-w-[380px]">
+          <BookButton className="mt-8" />
+
+        </div>
+
+        <div className="liquid-glass mx-auto w-full max-w-[360px] rounded-[30px] p-2 sm:max-w-[380px] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:max-w-[400px]">
           <div className="relative aspect-[9/16] overflow-hidden rounded-[24px] bg-black">
             <video
               className="absolute inset-0 h-full w-full object-cover"
@@ -55,7 +63,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <dl className="liquid-glass mt-12 grid w-full max-w-xl grid-cols-3 rounded-3xl px-2 py-5">
+        <dl className="liquid-glass mx-auto grid w-full max-w-xl lg:col-start-1 lg:mx-0 lg:-mt-4 lg:self-start grid-cols-3 rounded-3xl px-2 py-5">
           {TRUST.map(([num, label]) => (
             <div key={label} className="flex flex-col-reverse items-center gap-1 px-1">
               <dt className="text-[0.8125rem] leading-snug text-white/75">{label}</dt>
