@@ -6,7 +6,7 @@ segment: getting-help
 summary: "Yes, and for most people that combination works better than either alone. Medication often makes starting easier. It does not decide what to start, supply energy you do not have, or provide the external structure that most people are missing. Coaching works on those, and does not replace treatment."
 publish_date: 2027-02-10
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
-medical_review_required: true
+medical_review_required: false
 cta: focus-audit
 image: p16.webp
 ---

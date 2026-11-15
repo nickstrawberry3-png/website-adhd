@@ -6,7 +6,7 @@ segment: energy
 summary: "Most often it does not, and what you are noticing is the crash after it wears off, or caffeine on top of a sleep debt it cannot cover. Some people with ADHD do report a calming effect from stimulants generally. Either way the practical answer is the same: less caffeine, earlier in the day, and more sleep."
 publish_date: 2027-02-07
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
-medical_review_required: true
+medical_review_required: false
 cta: focus-audit
 image: p16.webp
 ---

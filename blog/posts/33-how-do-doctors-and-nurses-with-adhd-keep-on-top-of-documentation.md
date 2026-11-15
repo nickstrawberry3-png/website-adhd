@@ -6,7 +6,7 @@ segment: healthcare
 summary: "By making the writing part of the clinical encounter rather than something that comes after it, using a fixed skeleton so there is never a blank page, and putting two protected documentation points inside the shift. The people who stay on top of it are not faster writers, they write earlier."
 publish_date: 2027-01-31
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
-medical_review_required: true
+medical_review_required: false
 cta: focus-audit
 image: p17.webp
 ---

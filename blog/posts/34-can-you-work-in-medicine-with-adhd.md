@@ -6,7 +6,7 @@ segment: healthcare
 summary: "Yes. Plenty of doctors, nurses and allied health professionals have ADHD and work safely and well. The clinical work often suits an ADHD brain, because it is varied, urgent and people facing. The difficulty concentrates in documentation, administration and exams, and those parts are addressable."
 publish_date: 2027-02-01
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
-medical_review_required: true
+medical_review_required: false
 cta: focus-audit
 image: p19.webp
 ---

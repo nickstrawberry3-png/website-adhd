@@ -6,7 +6,7 @@ segment: healthcare
 summary: "Often yes, and it is usually a better first conversation than your line manager, because occupational health can recommend adjustments without necessarily passing on the detail. Ask what they share before you tell them anything, and go in with a specific adjustment in mind rather than a diagnosis alone."
 publish_date: 2027-02-03
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
-medical_review_required: true
+medical_review_required: false
 cta: focus-audit
 image: p21.webp
 ---

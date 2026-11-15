@@ -6,7 +6,7 @@ segment: energy
 summary: "Eat lunch, which a surprising number of people skip, and make it one that does not consist mainly of fast-releasing carbohydrate. The bigger factors are usually not food at all: sleep, skipped meals, dehydration and medication timing. Fix those before optimising the plate."
 publish_date: 2027-02-06
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
-medical_review_required: true
+medical_review_required: false
 cta: focus-audit
 image: p15.webp
 ---

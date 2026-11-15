@@ -6,7 +6,7 @@ segment: energy
 summary: "Because getting up is a transition with no immediate reward, made at the moment of lowest capacity, usually after too little sleep and with the phone within reach. It is not laziness. The fix is a fixed wake time, light early, and deciding the first action the night before so the morning contains no decision."
 publish_date: 2027-02-04
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
-medical_review_required: true
+medical_review_required: false
 cta: focus-audit
 image: p11.webp
 ---

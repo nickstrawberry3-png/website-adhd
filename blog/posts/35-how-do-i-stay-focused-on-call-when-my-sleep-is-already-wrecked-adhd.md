@@ -6,7 +6,7 @@ segment: healthcare
 summary: "You cannot think your way through sleep deprivation, so the aim is to reduce what you are asking of your attention rather than increase your effort. Externalise everything onto paper, do the judgement work early, use checklists for anything repetitive, and protect the one sleep block you can actually get."
 publish_date: 2027-02-02
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
-medical_review_required: true
+medical_review_required: false
 cta: focus-audit
 image: p20.webp
 ---

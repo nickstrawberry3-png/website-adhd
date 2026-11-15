@@ -6,7 +6,7 @@ segment: energy
 summary: "Usually because the evening is the first quiet time you have had, going to bed means stopping something, and delayed sleep timing is common with ADHD so you are not biologically sleepy yet. Fix the wake time first. Bedtime follows wake time, not the other way round."
 publish_date: 2027-02-08
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
-medical_review_required: true
+medical_review_required: false
 cta: focus-audit
 image: p19.webp
 ---

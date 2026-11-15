@@ -6,7 +6,7 @@ segment: energy
 summary: "For most people, yes, noticeably, and the effect is short lived. It helps most in the hours immediately after, so timing matters more than volume. Twenty minutes before the work that needs focus beats an hour in the evening, and consistency beats intensity by a long way."
 publish_date: 2027-02-05
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
-medical_review_required: true
+medical_review_required: false
 cta: focus-audit
 image: p13.webp
 ---

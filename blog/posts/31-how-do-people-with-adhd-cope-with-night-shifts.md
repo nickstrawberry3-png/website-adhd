@@ -6,7 +6,7 @@ segment: healthcare
 summary: "Night shifts remove the one thing ADHD relies on most, which is a consistent body clock. The approach that works is to stop trying to flip back and forth and instead protect one anchor sleep block, control light hard at both ends of the shift, and move the demanding tasks to the first half of the night."
 publish_date: 2027-01-30
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
-medical_review_required: true
+medical_review_required: false
 cta: focus-audit
 image: p15.webp
 ---

@@ -6,7 +6,7 @@ segment: energy
 summary: "The underlying traits usually change somewhat, with hyperactivity often reducing, but life gets more demanding and the external structure disappears, so many people find it feels worse in their thirties and forties. What has changed is usually the demands, not the condition."
 publish_date: 2027-02-09
 author: Dr Nick Straw, MBChB, BMedSci (University of Edinburgh)
-medical_review_required: true
+medical_review_required: false
 cta: focus-audit
 image: p20.webp
 ---
