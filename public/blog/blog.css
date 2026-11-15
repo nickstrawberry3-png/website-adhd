@@ -99,6 +99,8 @@ tr:last-child td { border-bottom: 0; }
 }
 .cta p { margin: 0 0 14px; }
 .cta p:last-child { margin: 0; }
+.cta .cta-alt { margin-top: 14px; font-size: 0.875rem; color: var(--muted); }
+.cta .cta-alt a { color: inherit; text-decoration: underline; }
 .cta strong { font-family: var(--serif); font-weight: 400; font-size: 1.45rem; line-height: 1.25; display: block; }
 .button {
   display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 28px;

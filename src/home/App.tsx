@@ -94,6 +94,17 @@ export default function App() {
                 {t['hero-cta2']}
               </a>
             </div>
+
+            <p className="mt-4 text-sm text-white/70">
+              Not ready for a call?{' '}
+              <a
+                href="https://drnickyyy.gumroad.com/l/adhd-founders-manual"
+                rel="noopener"
+                className="underline underline-offset-2 transition-colors hover:text-white"
+              >
+                Get the free ADHD Founder's Manual.
+              </a>
+            </p>
           </div>
 
         </div>

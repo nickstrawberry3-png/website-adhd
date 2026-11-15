@@ -10,6 +10,8 @@ const postsDir = path.join(root, 'blog/posts')
 const out = path.join(root, 'dist/blog')
 const SITE = 'https://drnickstraw.com'
 const BOOK = '/focus-audit/'
+// Free guide, shown as a small line under the Focus Audit button on every post.
+const MANUAL = 'https://drnickyyy.gumroad.com/l/adhd-founders-manual'
 const TZ = 'Asia/Taipei'
 
 // BLOG_TODAY lets you preview a future date locally, for example BLOG_TODAY=2026-12-31.
@@ -232,6 +234,7 @@ ${
 }
       <section class="cta">
 ${cta}
+        <p class="cta-alt">Not ready for a call? <a href="${MANUAL}" rel="noopener">Get the free ADHD Founder's Manual.</a></p>
       </section>
     </article>
   </main>` +
