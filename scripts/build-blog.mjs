@@ -17,7 +17,11 @@ const TZ = 'Asia/Taipei'
 // BLOG_TODAY lets you preview a future date locally, for example BLOG_TODAY=2026-12-31.
 const today = process.env.BLOG_TODAY ?? new Intl.DateTimeFormat('en-CA', { timeZone: TZ }).format(new Date())
 
-const STAGES = { fuel: 'Stage 01 · Fuel', focus: 'Stage 02 · Focus', finish: 'Stage 03 · Finish' }
+const STAGES = {
+  fuel: 'Stage 01 · Fuel', focus: 'Stage 02 · Focus', finish: 'Stage 03 · Finish',
+  healthcare: 'Healthcare', study: 'Study and exams', freelance: 'Freelance', business: 'Business owners',
+  corporate: 'At work', 'side-projects': 'Side projects', energy: 'Energy', mind: 'Mind', 'getting-help': 'Getting help',
+}
 const TOOL_NAMES = [
   'Golden Window', 'First Hour Reset', 'Phone Lockdown', 'Drift Point', 'Later Pad', 'Sunday Reset',
   'Proof List', 'Step Zero', 'Spark Check', 'Burnout Loop Breaker', 'Bad Week Plan', 'Burnout Loop',
@@ -61,6 +65,10 @@ function parse(file, raw) {
     if (v.startsWith('"') && v.endsWith('"')) v = v.slice(1, -1).replace(/\\"/g, '"')
     fm[kv[1]] = v
   }
+  // Posts 31+ use "segment" instead of "stage" and carry no tool name.
+  fm.stage ??= fm.segment
+  fm.tool ??= ''
+  if (!STAGES[fm.stage]) throw new Error(`${file}: unknown group "${fm.stage}"`)
   let body = m[2].trim()
 
   // H1 is rendered by the template.
@@ -347,8 +355,10 @@ for (const p of all) {
 for (const p of all)
   for (const r of p.readNext) if (!slugs.has(r.slug)) throw new Error(`${p.file}: Read next points to missing post ${r.slug}`)
 
+// medical_review_required: true holds a post back until Nick has read it. Change it to false to release it.
+const held = all.filter((p) => p.medical_review_required === 'true')
 const live = all
-  .filter((p) => p.publish_date <= today)
+  .filter((p) => p.publish_date <= today && p.medical_review_required !== 'true')
   .sort((a, b) => (a.publish_date < b.publish_date ? 1 : a.publish_date > b.publish_date ? -1 : 0))
 const liveSlugs = new Set(live.map((p) => p.slug))
 
@@ -372,5 +382,5 @@ await writeFile(sitemapPath, sitemap.replace('</urlset>', `${entries}\n</urlset>
 const short = all.filter((p) => p.words < 600).map((p) => `${p.file} (${p.words} words)`)
 if (short.length) console.log(`note: short posts: ${short.join(', ')}`)
 console.log(`blog: ${live.length} of ${all.length} posts live (Taipei date ${today}), next: ${
-  all.filter((p) => p.publish_date > today).sort((a, b) => (a.publish_date < b.publish_date ? -1 : 1))[0]?.publish_date ?? 'none'
-}`)
+  all.filter((p) => p.publish_date > today && p.medical_review_required !== 'true').sort((a, b) => (a.publish_date < b.publish_date ? -1 : 1))[0]?.publish_date ?? 'none'
+}, held for review: ${held.length}`)
