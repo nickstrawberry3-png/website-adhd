@@ -12,6 +12,8 @@ const ssrDir = path.join(root, '.ssr')
 const pages = [
   { entry: 'src/home/server.tsx', name: 'home', html: 'dist/index.html', url: '/', src: ['src/home', 'index.html'] },
   { entry: 'src/programme/server.tsx', name: 'programme', html: 'dist/12-week-programme/index.html', url: '/12-week-programme/', src: ['src/programme', '12-week-programme/index.html'] },
+  { entry: 'src/quiz/server.tsx', name: 'quiz', html: 'dist/quiz/index.html', url: '/quiz/', src: ['src/quiz', 'quiz/index.html', 'src/components/Quiz.tsx'] },
+  { entry: 'src/free/server.tsx', name: 'free', html: 'dist/free/index.html', url: '/free/', src: ['src/free', 'free/index.html'] },
 ]
 
 // Static pages that are not built by React but still belong in the sitemap.
