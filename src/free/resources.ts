@@ -24,7 +24,7 @@ export const RESOURCES: Resource[] = [
     kind: 'PDF, 2 pages',
     blurb: 'Let software do the money tasks we keep putting off.',
     button: 'Get the toolkit',
-    url: '', // PLACEHOLDER: AI Toolkit PDF link
+    url: 'https://drive.google.com/file/d/1-gEQYAuYnBn9mUSN8TQSwO1YOg1GJz3u/view',
   },
   {
     keyword: 'FOLLOWUP',
