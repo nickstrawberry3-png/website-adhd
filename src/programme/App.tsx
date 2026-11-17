@@ -1,11 +1,9 @@
-import { useEffect, useRef, type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import Hero from '@/components/Hero'
 import Quiz from '@/components/Quiz'
 import PageBackground from '@/components/PageBackground'
 import BookButton from '@/components/BookButton'
-
-const CALENDLY_URL =
-  'https://calendly.com/drnickstraw/free-20-minute-focus-audit?hide_event_type_details=0&hide_gdpr_banner=1&background_color=0b1220&text_color=eef4fa&primary_color=1e90ff'
+import Calendly from '@/components/Calendly'
 
 const PROBLEMS = [
   '"When there\'s a deadline, I get it all done. But the next day, I\'m depleted."',
@@ -79,26 +77,6 @@ const Label = ({ children }: { children: ReactNode }) => (
 
 const h2 = 'text-[2.125rem] text-text sm:text-5xl'
 const body = 'text-[1.0625rem] text-muted sm:text-lg'
-
-function Calendly() {
-  const ref = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    if (document.querySelector('script[src*="assets.calendly.com"]')) return
-    const s = document.createElement('script')
-    s.src = 'https://assets.calendly.com/assets/external/widget.js'
-    s.async = true
-    ref.current!.appendChild(s)
-  }, [])
-  return (
-    <div ref={ref}>
-      <div
-        className="calendly-inline-widget overflow-hidden rounded-2xl"
-        data-url={CALENDLY_URL}
-        style={{ minWidth: 320, height: 700 }}
-      />
-    </div>
-  )
-}
 
 export default function App() {
   return (
