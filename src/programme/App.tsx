@@ -171,6 +171,33 @@ export default function App() {
 
         {/* Results */}
         <section className="px-5 py-20 sm:px-8 lg:py-28">
+          {/* Video testimonial: Zainab (main video, top of results) */}
+          <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[300px_1fr] lg:gap-16 mb-16 lg:mb-24">
+            <figure className="mx-auto w-full max-w-[300px] lg:order-first">
+              <video
+                src="/assets/zainab-testimonial.mp4"
+                poster="/assets/zainab-testimonial-poster.jpg"
+                controls
+                playsInline
+                preload="none"
+                width={720}
+                height={1280}
+                className="h-auto w-full rounded-3xl bg-black"
+              >
+                Your browser does not support video.
+              </video>
+            </figure>
+            <div className="lg:order-last">
+              <Label>Results</Label>
+              <h2 className="text-[1.875rem] leading-[1.15] text-text sm:text-[2.5rem]">
+                14 hours a day on Instagram → 3, in two weeks
+              </h2>
+              <blockquote className="mt-6 font-serif text-2xl italic leading-snug text-text/90">
+                "I couldn't get out of bed. I couldn't set goals… This has helped my life tremendously."
+              </blockquote>
+              <p className="mt-4 text-[0.9375rem] font-semibold text-khaki">Zainab, self-employed HR consultant</p>
+            </div>
+          </div>
           <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[300px_1fr] lg:gap-16">
             <figure className="mx-auto w-full max-w-[300px] lg:order-first">
               <img
@@ -186,7 +213,6 @@ export default function App() {
               </figcaption>
             </figure>
             <div className="lg:order-last">
-              <Label>Results</Label>
               <h2 className="text-[1.875rem] leading-[1.15] text-text sm:text-[2.5rem]">
                 From burnout and overwhelm to working less, earning more, and getting her energy back
               </h2>
@@ -205,36 +231,6 @@ export default function App() {
                 <p className={`${body} mt-6`}>{r.body}</p>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* Video testimonial: Zainab */}
-        <section className="px-5 pb-20 sm:px-8 lg:pb-28">
-          <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[300px_1fr] lg:gap-16">
-            <figure className="mx-auto w-full max-w-[300px] lg:order-first">
-              <video
-                src="/assets/zainab-testimonial.mp4"
-                poster="/assets/zainab-testimonial-poster.jpg"
-                controls
-                playsInline
-                preload="none"
-                width={720}
-                height={1280}
-                className="h-auto w-full rounded-3xl bg-black"
-              >
-                Your browser does not support video.
-              </video>
-            </figure>
-            <div className="lg:order-last">
-              <Label>Watch</Label>
-              <h2 className="text-[1.875rem] leading-[1.15] text-text sm:text-[2.5rem]">
-                14 hours a day on Instagram → 3, in two weeks
-              </h2>
-              <blockquote className="mt-6 font-serif text-2xl italic leading-snug text-text/90">
-                "I couldn't get out of bed. I couldn't set goals… This has helped my life tremendously."
-              </blockquote>
-              <p className="mt-4 text-[0.9375rem] font-semibold text-khaki">Zainab, self-employed HR consultant</p>
-            </div>
           </div>
         </section>
 
