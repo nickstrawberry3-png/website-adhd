@@ -1,4 +1,4 @@
-// The six free resources on drnickstraw.com/free.
+// The free resources on drnickstraw.com/free.
 // PLACEHOLDER: put each Google Drive or YouTube link in `url`. While `url` is empty, the button shows "Coming soon".
 export type Resource = {
   keyword: string
@@ -10,6 +10,22 @@ export type Resource = {
 }
 
 export const RESOURCES: Resource[] = [
+  {
+    keyword: 'MANUAL',
+    name: "The ADHD Founder's Manual",
+    kind: 'Free guide',
+    blurb: 'How we break the Burnout Loop in our business, so we stop pushing hard, crashing and starting over.',
+    button: 'Get the manual',
+    url: 'https://drnickyyy.gumroad.com/l/adhd-founders-manual',
+  },
+  {
+    keyword: 'GUIDE',
+    name: 'The ADHD Survival Guide',
+    kind: 'Free guide',
+    blurb: 'Simple ways to manage our ADHD day to day.',
+    button: 'Get the guide',
+    url: 'https://drnickyyy.gumroad.com/l/adhd-survival-guide',
+  },
   {
     keyword: 'RESET',
     name: 'The 7-Day Reset',
