@@ -70,7 +70,7 @@ export default function App() {
 
             <p className="liquid-glass rounded-full px-4 py-2 text-sm font-medium text-white/90">{t['hero-eyebrow']}</p>
 
-            <h1 className="mt-6 text-[2.75rem] text-white [text-shadow:0_2px_24px_rgba(5,8,13,0.6)] sm:text-6xl lg:text-[4.75rem]">
+            <h1 className="mt-6 text-[2.25rem] text-white [text-shadow:0_2px_24px_rgba(5,8,13,0.6)] sm:text-5xl lg:text-[3.75rem]">
               {lines(t['hero-h1']).map((line, i) => (
                 <span key={i} className="block">
                   {line}
@@ -98,11 +98,10 @@ export default function App() {
             <p className="mt-4 text-sm text-white/70">
               Not ready for a call?{' '}
               <a
-                href="https://drnickyyy.gumroad.com/l/adhd-founders-manual"
-                rel="noopener"
+                href="/quiz/"
                 className="underline underline-offset-2 transition-colors hover:text-white"
               >
-                Get the free ADHD Founder's Manual.
+                Take the free Focus Quiz.
               </a>
             </p>
           </div>

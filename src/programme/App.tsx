@@ -16,22 +16,22 @@ const PROBLEMS = [
 const STAGES = [
   {
     n: 'Stage 01',
-    title: 'Fuel (Weeks 1 to 4)',
+    title: 'Fuel',
     desc: 'Get your energy back first. Sleep, environment and the first hour of your day, with the First Hour Reset.',
   },
   {
     n: 'Stage 02',
-    title: 'Focus (Weeks 5 to 8)',
+    title: 'Focus',
     desc: 'Capture everything, choose what matters, protect the time, and start and finish your work. The Spark Check helps you get started on days when motivation is missing.',
   },
   {
     n: 'Stage 03',
-    title: 'Finish (Weeks 9 to 12)',
+    title: 'Finish',
     desc: 'Make it last with The Burnout Loop Breaker which spots the crash before it happens, and your Bad Week Plan means one bad week no longer sends you back to zero.',
   },
 ]
 
-const MORE_RESULTS = [
+const TOP_RESULTS = [
   {
     heading: 'From not picking up the camera to booking shoots again in 3 weeks',
     body: 'A photographer had almost stopped taking bookings, stopped posting her work, and said she would forget she even had the equipment. Within 3 weeks of starting the Fuel, Focus, Finish Method she reached out to past contacts, posted her work again, booked 2 shoots and had 4 more waiting on dates. She also put her website back online and cleared out her office, while helping her parents move house.',
@@ -41,6 +41,9 @@ const MORE_RESULTS = [
     heading: 'From 5 years of putting off billing to starting the same week',
     body: 'A retired engineer had been putting off billing for years of work on a family building, worth tens of thousands of dollars. On the first call we broke it into small steps and set clear rules for how to count her time, and she started billing the same week.',
   },
+]
+
+const MORE_RESULTS = [
   {
     heading: 'From failing a module to top marks',
     body: 'A medical student was getting D grades and close to dropping out. She is now getting mostly As and Bs, and got the top mark in a module she had failed. In her words, she "stopped waiting to feel motivated."',
@@ -60,7 +63,7 @@ const TESTIMONIALS = [
       '"When we first started working together I felt like I was always fighting with myself. I stopped waiting to feel motivated all the time and started understanding that showing up even on the difficult days is what really makes the difference."',
       '"I don\'t let one bad day convince me that I\'m failing. I feel happier, more at peace with myself, more consistent and much more confident."',
     ],
-    who: 'Sarah, 12-week client',
+    who: 'Sarah, coaching client',
   },
   {
     quotes: [
@@ -147,8 +150,7 @@ export default function App() {
               <Label>The Solution</Label>
               <h2 className={h2}>The Fuel, Focus, Finish Method</h2>
               <p className="mt-6 text-[1.0625rem] text-text/90 sm:text-lg">
-                Over 12 weeks, we work 1:1 to build a system around how your brain works. There are 3 stages, always in
-                this order:
+                We work 1:1 to build a system around how your brain works. There are 3 stages, always in this order:
               </p>
             </div>
 
@@ -163,8 +165,8 @@ export default function App() {
             </ol>
 
             <p className="glass-panel mt-10 max-w-3xl rounded-2xl p-5 text-[1.0625rem] text-text/90 sm:p-6 sm:text-lg">
-              Weekly 1:1 accountability runs through all 12 weeks. We set up your environment so the right choices
-              become automatic, and you cannot ghost on your own goals, because I will not let you.
+              1:1 accountability runs through every month. We set up your environment so the right choices
+              become automatic, and you cannot ghost on your own goals, because I will not let you. It's monthly, and you can stop at the end of any month. Most people feel the first change within two weeks. When you hit your goal, most people set the next one.
             </p>
           </div>
         </section>
@@ -197,6 +199,14 @@ export default function App() {
               </blockquote>
               <p className="mt-4 text-[0.9375rem] font-semibold text-khaki">Zainab, self-employed HR consultant</p>
             </div>
+          </div>
+          <div className="mx-auto mb-14 grid max-w-5xl gap-12 lg:mb-20 lg:gap-16 lg:pl-[364px]">
+            {TOP_RESULTS.map((r) => (
+              <div key={r.heading}>
+                <h2 className="text-[1.875rem] leading-[1.15] text-text sm:text-[2.5rem]">{r.heading}</h2>
+                <p className={`${body} mt-6`}>{r.body}</p>
+              </div>
+            ))}
           </div>
           <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[300px_1fr] lg:gap-16">
             <figure className="mx-auto w-full max-w-[300px] lg:order-first">
@@ -270,7 +280,7 @@ export default function App() {
                 I'm Dr Nick Straw, a former UK doctor with ADHD. I trained at Edinburgh Medical School and worked as a
                 doctor for 2 years. I know the Burnout Loop from the inside. I got through
                 six years of medical school by building systems around how my brain works without forcing it. And now I
-                help ADHD business owners break the loop, feel more confident in themselves and get stuff done.
+                help women with ADHD over 40 break the loop, feel more confident in themselves and get stuff done.
               </p>
             </div>
           </div>

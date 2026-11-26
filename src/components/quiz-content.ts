@@ -64,6 +64,8 @@ export const QUESTIONS: Question[] = [
       { label: 'Self-employed or freelancer' },
       { label: 'Employed professional' },
       { label: 'Student' },
+      { label: 'Retired' },
+      { label: 'Looking after my family' },
       { label: 'Other' },
     ],
   },

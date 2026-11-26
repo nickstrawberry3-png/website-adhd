@@ -15,7 +15,7 @@ export default function App() {
         <section className="px-5 pb-12 pt-12 text-center sm:px-8 lg:pt-20">
           <div className="mx-auto max-w-2xl">
             <p className="mb-3 text-[0.9375rem] font-semibold text-sky">Free resources</p>
-            <h1 className="text-[2.5rem] text-text sm:text-6xl">Free tools for ADHD business owners</h1>
+            <h1 className="text-[2.5rem] text-text sm:text-6xl">Free ADHD tools</h1>
             <p className="mt-5 text-[1.0625rem] text-muted sm:text-lg">
               Pick the one that fits what we're stuck on today. One is enough.
             </p>

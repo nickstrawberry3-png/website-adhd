@@ -86,17 +86,15 @@ export default function Hero() {
           </div>
 
           <p className="liquid-glass rounded-full px-4 py-2 text-sm font-medium text-white/90">
-            12-Week Frictionless Focus Programme for ADHD Business Owners
+            Frictionless Focus: monthly 1:1 ADHD coaching
           </p>
 
           <h1 className="mt-6 text-[2.75rem] text-white [text-shadow:0_2px_24px_rgba(5,8,13,0.6)] sm:text-6xl lg:text-[4.25rem]">
             Break the Burnout Loop
-            <br />
-            in 12 Weeks
           </h1>
 
           <p className="mt-4 max-w-[30rem] text-lg font-medium text-white sm:text-xl">
-            I help ADHD business owners break the Burnout Loop.
+            Helping women with ADHD over 40 finally do the work they keep putting off.
           </p>
 
           <p className="mt-5 max-w-[34rem] text-[1.0625rem] text-white/85 sm:text-lg">

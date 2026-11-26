@@ -11,6 +11,14 @@ export type Resource = {
 
 export const RESOURCES: Resource[] = [
   {
+    keyword: 'BLOCKER',
+    name: 'The Focus Quiz',
+    kind: 'Quiz, 2 minutes',
+    blurb: "What's blocking your focus? 7 quick questions and 1 thing to try today.",
+    button: 'Take the quiz',
+    url: '/quiz/',
+  },
+  {
     keyword: 'MANUAL',
     name: "The ADHD Founder's Manual",
     kind: 'Free guide',
@@ -65,13 +73,5 @@ export const RESOURCES: Resource[] = [
     blurb: 'Work next to me for 25 minutes on the task you keep avoiding.',
     button: 'Watch the sprint',
     url: '', // PLACEHOLDER: unlisted YouTube link
-  },
-  {
-    keyword: 'BLOCKER',
-    name: 'The Focus Quiz',
-    kind: 'Quiz, 2 minutes',
-    blurb: "What's blocking your focus? 7 quick questions and 1 thing to try today.",
-    button: 'Take the quiz',
-    url: '/quiz/',
   },
 ]
