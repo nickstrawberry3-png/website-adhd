@@ -74,6 +74,9 @@ const TESTIMONIALS = [
   },
 ]
 
+const JARED_QUOTE =
+  '"I\'ve coached for more than 35 years, and I\'d put Nick Straw on my short list of coaches I\'d recommend to a woman over 40 with ADHD. He\'s exceptionally good at figuring out where someone\'s day keeps getting derailed and turning that insight into a change she can actually use."'
+
 const Label = ({ children }: { children: ReactNode }) => (
   <p className="mb-3 text-[0.9375rem] font-semibold text-sky">{children}</p>
 )
@@ -260,6 +263,14 @@ export default function App() {
                 </figure>
               ))}
             </div>
+            <figure className="glass-panel mt-4 rounded-3xl border border-steel/30 p-6 sm:p-8 lg:mt-5">
+              <blockquote className="text-[1.0625rem] leading-relaxed text-text/90 sm:text-lg">
+                <p>{JARED_QUOTE}</p>
+              </blockquote>
+              <figcaption className="mt-6 text-[0.9375rem] font-semibold text-khaki">
+                Jared Kallen, ADHD coach for 35 years, Action Pact Coaching
+              </figcaption>
+            </figure>
           </div>
         </section>
 
