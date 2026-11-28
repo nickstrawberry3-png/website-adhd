@@ -82,6 +82,7 @@ export default function Hero() {
               <p className="font-serif text-[1.75rem] leading-tight text-white lg:text-[2.5rem]">Dr Nick Straw</p>
               <p className="text-sm font-semibold text-gold lg:mt-1 lg:text-lg">MBChB, BMedSci · Edinburgh Medical School</p>
               <p className="text-sm text-white/80 lg:text-[1.0625rem]">Former UK doctor with ADHD, licensed doctor in Australia.</p>
+              <p className="text-sm font-semibold text-gold lg:text-[1.0625rem]">Listed coach, ADHD Coaches Organization (ACO)</p>
             </div>
           </div>
 

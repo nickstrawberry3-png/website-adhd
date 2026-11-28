@@ -65,6 +65,7 @@ export default function App() {
                 <p className="font-serif text-[1.75rem] leading-tight text-white lg:text-[2.75rem]">Dr Nick Straw</p>
                 <p className="text-sm font-semibold text-gold lg:mt-1 lg:text-lg">{t['cred-degrees']}</p>
                 <p className="text-sm text-white/80 lg:text-[1.0625rem]">{t['cred-line']}</p>
+                <p className="text-sm font-semibold text-gold lg:text-[1.0625rem]">{t['cred-aco']}</p>
               </div>
             </div>
 

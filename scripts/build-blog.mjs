@@ -44,6 +44,7 @@ const PERSON = {
   url: `${SITE}/`,
   image: `${SITE}/assets/profile.webp`,
   alumniOf: { '@type': 'CollegeOrUniversity', name: 'University of Edinburgh' },
+  memberOf: { '@type': 'Organization', name: 'ADHD Coaches Organization', alternateName: 'ACO', url: 'https://www.adhdcoaches.org/' },
   sameAs: ['https://www.instagram.com/dr_nickyyy/'],
 }
 const ORG = { '@type': 'Organization', '@id': `${SITE}/#org`, name: 'Frictionless Focus', url: `${SITE}/` }
